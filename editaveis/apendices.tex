@@ -116,7 +116,7 @@ A máquina deverá ter um sistema de recompensa ao usuário por cada garrafa dep
     \centering
     \caption{Cenário acadêmico}
     \label{my-label}
-    \begin{tabular}{|p{0.35\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+    \begin{tabular}{|p{0.30\linewidth}|p{0.30\linewidth}|p{0.30\linewidth}|}
     \hline
     \multicolumn{1}{|c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{Função}} & \multicolumn{1}{c|}{\textbf{Interesse}} \\ \hline
     Professores da Matéria Projeto Integrador II do Campus de Engenharias da UnB & Orientar e avaliar os alunos no desenvolvimento do projeto & Orientar e avaliar os alunos no desenvolvimento do projetoSaber se os alunos da matéria estão hábeis a serem egressos da universidade \\ \hline
@@ -130,7 +130,7 @@ A máquina deverá ter um sistema de recompensa ao usuário por cada garrafa dep
     \centering
     \caption{Cenário de mercado}
     \label{my-label}
-    \begin{tabular}{|p{0.35\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+    \begin{tabular}{|p{0.30\linewidth}|p{0.30\linewidth}|p{0.30\linewidth}|}
     \hline
     \multicolumn{1}{|c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{Função}} & \multicolumn{1}{c|}{\textbf{Interesse}} \\ \hline
     Clientes de supermercado & Utilizar a máquina & Ser bonificado pelo uso \\ \hline
@@ -278,7 +278,13 @@ Os papéis e responsabilidades do projeto foram determinadas de forma que todos 
 Como foi definido no tópico de metodologia, ao iniciar cada sprint será realizada a análise e o planejamento das respostas. O monitoramento será feito ao longo de todo o processo. Mais precisamente, ao início de cada sprint, começará a gerência daquele ciclo de trabalho, acontecerão as análises, planejamentos e reavaliação para mudanças, pedido formal (volátil) e atualização de documentos (volátil).
 
 \subsection{Categoria de Riscos}
-Os riscos podem ser divididos em internos e externos. A montagem da EAR é interessantes pois, dividir os riscos em categorias facilita a ter uma visão mais ampla dos pontos “fracos” do projeto e que devem possuir uma maior atenção dos gestores. Essa categorização é possível de ser feita utilizando esse modelo, a qual ilustra bem as categorias dos riscos e sua hierarquia.
+No contexto deste projeto, para ter uma visão compacta e de fácil gerenciamento, os riscos foram divididos apenas em internos e externos. Dividir os riscos em categorias facilita a ter uma visão mais ampla dos pontos “fracos” do projeto e que devem possuir uma maior atenção dos gestores.
+
+\subsubsection{Interno}
+Fatores internos são atribuições que podem afetar o projeto de dentro do contexto da equipe. São inerentes ao projeto, controlado pelo líder, que utiliza ações e atividades diretas para mitiga-los.[6]
+
+\subsubsection{Externo}
+Fatores externos são atribuições que podem afetar o projeto de fora do contexto da equipe. Podem ser influenciados pelo líder, mas não é possível controlá-los [6]. Sendo assim, são colocadas formas de preveção contra esses tipos de riscos.
 
 \subsection{Análise dos Riscos}
 Em um Projeto de Engenharia, os riscos podem causar grande impacto caso não sejam bem mapeados e, visto isso, qualquer tipo de risco deve ser identificado e analisado cautelosamente. Devido essa necessidade, foi definido quatro atributos para analisar os riscos (Probabilidade, Impacto, Peso e Prioridade).
@@ -343,7 +349,7 @@ A equipe definiu, usando como base no guia PmBok, que os principais objetivos do
 \end{table}
 
 \subsection{Matriz de Probabilidade e Impacto}
-A tabela abaixo, definida como matriz, e baseada nas tabelas 1 e 2, possibilita a definição de um valor de peso para o risco.
+A tabela abaixo, definida como matriz, e baseada nas tabelas 8 e 9, possibilita a definição de um valor de peso para o risco.
 
 \begin{table}[htp]
     \centering
@@ -377,8 +383,6 @@ Com base na matriz elaborada, é possível definir o cenário do projeto para ca
     \end{tabular}
 \end{table}
 
-\newpage
-
 Resposta:
 \begin{itemize}
     \item Equilibrado -> Prevenir
@@ -390,5 +394,95 @@ Caso se tenha que escolher entre dois riscos que tenha o mesmo cenário e a mesm
 
 \subsection{Controle e Rastreabilidade}
 Utilizando este documento como base, é possível elaborar o Registro dos Riscos (RR) para se ter noção de todos os riscos que podem afetar o projeto de forma negativa ou positiva. Os riscos sendo mapeados no RR, é possível ter a noção da prioridade e forma de controle de cada um criando assim, a rastreabilidade de todos. Para garantir a qualidade das atividades de controle sobre os riscos, serão feitas inspeções informais ao início de cada sprint elaborando assim, um relatório de controle com situação de combate, prioridade e pedidos de mudanças sobre os riscos monitorados.
+
+\chapter{Registro dos Riscos}
+
+\subsection{WhatIf}
+\begin{table}[htp]
+    \centering
+    \caption{WhatIf}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|p{0.20\linewidth}|p{0.18\linewidth}|}
+    \hline
+    \textbf{Atividade} & \textbf{O que aconteceria se ?} & \textbf{Causas} & \textbf{Consequências} & \textbf{Observações} \\ \hline
+    Construção da estrutura & Quebrasse uma ferramenta & Descuido & Deve-se comprar outra & Quem quebrou paga \\ \hline
+    Construção do app & Não for possível integrar com a máquina & Falta de conhecimento & Requisito de bonificação incompleto & Estudo frequente \\ \hline
+    Compra de material & Viesse errado ou com defeito & Descuido de quem comprou, erro de fábrica ou descuido da empresa de transporte & Atraso no desenvolvimento e aumento nos custos & Fez a decisão de compra errada sozinho, paga sozinho. Veio com defeito, o grupo paga \\ \hline
+    Integração do projeto & Algum subsistema não estiver pronto & Irresponsabilidade dos responsáveis ou falta de conhecimento & Diminuição na nota de todo o grupo & Se estiver dependendo de um subsistema, tente ajudar os responsáveis ao,máximoSe o responsável não estiver trabalhando, avise a equipe para que,todos,avisem os professores \\ \hline
+    Desenvolvimento do projeto & Um integrante saisse & Motivos pessoais & Trabalho sem alocação & Todos devem infomar certas ações com bastante antecedência \\ \hline
+    Desenvolvimento do projeto & Não tiver o material no galpão & Outro grupo tomou posse ou não tem & Aumento no custo & Procurar se há a disponibilidade do material ou da ferramenta de forma gratuita em algum lugar de Brasília \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Tabela de Registros}
+\begin{table}[!htp]
+    \centering
+    \caption{Registros dos Riscos}
+    \label{my-label}
+    \begin{tabular}{|p{0.10\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|}
+    \hline
+    \textbf{ID} & \textbf{Descrição} & \textbf{Causa} & \textbf{Impacto descrito} \\ \hline
+    R01 & Queima de equipamento por descarga elétrica & Descuido de quem estiver ligando o equipamento & Aumento no custo e tempo do projeto \\ \hline
+    R02 & Atraso na entrega de material & Fornecedor não tem ou falha no processo de entrega & Parte do projeto não pode ser feito \\ \hline
+    R03 & Erro de dimensionamento dos subsistemas & Descuido do responsável pela atividade & Retrabalho \\ \hline
+    R04 & Falha de integração entre o app e a máquina & Falta de conhecimento dos envolvidos & Requisito de bonificação não finalizado \\ \hline
+    R05 & Falha de integração dos subsistemas da máquina & Falta de tempo ou conhecimento dos envolvidos & Não haverá um produto para apresentar \\ \hline
+    R06 & Material com defeito & Defeito de fábrica ou descuido & Parte do projeto não pode ser feito \\ \hline
+    R07 & Integrante se ausenta da disciplina & Causa pessoal & Maior volume de trabalho para os outros membros \\ \hline
+    R08 & Não entrega de atividades no prazo & Planejamento falho & Atraso no andamento do projeto \\ \hline
+    R09 & Escopo muito grande para o prazo ou orçamento & Pedido ou inexperiência dos integrantes & Estouro de custo e não entrega completa do projeto \\ \hline
+    R10 & Inadimplência de algum integrante & Falta de dinheiro & Maior gastos a outros membros \\ \hline
+    R11 & Escolha inadequada de componentes /equipamentos & Descuido do responsável pela atividade & Atraso e aumento no custo \\ \hline
+    R12 & Mal dimensionamento do consumo elétrico & Descuido do responsável pela atividade & Retrabalho \\ \hline
+    R13 & Extravio ou danificação de materiais no galpão & Descuido do responsável pela atividade & Aumento no custo e tempo do projeto \\ \hline
+    R14 & Indisponibilidade de equipamentos no galpão & Outro grupo já tomou posse ou esta estragado & Aumento no custo \\ \hline
+    R15 & Falta de internet no dia da apresentação & Falha da internet do campus & Ter celulares preparados para rotear \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+\subsection{Análise e Respostas aos Riscos}
+\begin{table}[!htp]
+    \centering
+    \caption{Análise dos Riscos}
+    \label{my-label}
+    \begin{tabular}{|p{0.10\linewidth}|p{0.18\linewidth}|p{0.15\linewidth}|p{0.10\linewidth}|p{0.15\linewidth}|p{0.18\linewidth}|}
+    \hline
+    \textbf{ID} & \textbf{Probabilidade} & \textbf{Impacto em nível} & \textbf{P x I} & \textbf{Prioridade} & \textbf{Ação} \\ \hline
+    R01 & Queima de equipamento por descarga elétrica & Baixo & 0.06 & Alerta & Controlar - Manter a atenção ao ligar todos os equipamentos \\ \hline
+    R02 & Atraso na entrega de material & Alto & 0.32 & Crítico & Mitigar - Procurar todos os componentes dentro de brasília e os que não houverem, pedir bem antes e deixar mais um fornecedor a pronta entrega \\ \hline
+    R03 & Erro de dimensionamento dos subsistemas & Alto & 0.32 & Crítico & Mitigar - Procura de professores e apresentação prévia dos dimensionamentos realizados a todo o time de estrutura \\ \hline
+    R04 & Falha de integração entre o app e a máquina & Alto & 0.24 & Crítico & Mitigar - Plano de estudo prévio e boa relação entre os integrantes de software e eletrônica \\ \hline
+    R05 & Falha de integração dos subsistemas da máquina & Catastrófico & 0.80 & Crítico & Mitigar - Manter trabalho de subsistemas atualizados entre si e iniciar a integração logo que puder \\ \hline
+    R06 & Material com defeito & Baixo & 0.06 & Alerta & Controlar - Evitar comprar material de fora de brasília para ter a possibilidade de teste na hora da compra e deixar mais um fornecedor a pronta entrega \\ \hline
+    R07 & Integrante se ausenta da disciplina & Moderado & 0.08 & Alerta & Controlar - Manter constante comunicação entre os integrantes \\ \hline
+    R08 & Não entrega de atividades no prazo & Catastrófico & 0.32 & Crítico & Mitigar - Seguir planejamento e rigorisidade em datas \\ \hline
+    R09 & Escopo muito grande para o prazo ou orçamento & Alto & 0.32 & Crítico & Mitigar - Avaliar sempre alternativas de equipamentos e componentes mais baratos e dialogar formalmente e bem com os professores \\ \hline
+    R10 & Inadimplência de algum integrante & Moderado & 0.12 & Alerta & Controlar - Conversar previamente com todos sobre situação financeira e anotações plenas de todos as entradas e saídas do caixa de forma a deixar explícito a contribuição para os professores \\ \hline
+    R11 & Escolha inadequada de componentes /equipamentos & Alto & 0.16 & Alerta & Controlar - Reunião de avaliação sobre cada componente \\ \hline
+    R12 & Mal dimensionamento do consumo elétrico & Alto & 0.24 & Crítico & Mitigar - Empenho do responsável e procura de professores \\ \hline
+    R13 & Extravio ou danificação de materiais no galpão & Catastrófico & 0.48 & Crítico & Mitigar - Manter histórico de atividades feitas no galpão e fotos da máquina todos os dias de trabalho \\ \hline
+    R14 & Indisponibilidade de equipamentos no galpão & Moderado & 0.20 & Crítico & Mitigar - Procurar locais que possam ter o equipamento para,aluguel ou uso gratuito \\ \hline
+    R15 & Falta de internet no dia da apresentação & Insignificante & 0.05 & Alerta & Controlar - Membros rotearem no celular \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+\subsection{Checklist}
+\begin{table}[!htp]
+    \centering
+    \caption{Checklist}
+    \label{my-label}
+    \begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.25\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Risco} & \textbf{Situação} & \textbf{Resposta} & \textbf{Resultado} \\ \hline
+    R03 & Identificando & Mitigar - Procura de professores e apresentação prévia dos dimensionamentos realizados a todo o time de estrutura & Em andamento \\ \hline
+    R04 & Identificando & Mitigar - Plano de estudo prévio e boa relação entre os integrantes de software e eletrônica & Em andamento \\ \hline
+    R05 & Identificando & Mitigar - Manter trabalho de subsistemas atualizados entre si com reuniões presenciais semanais e iniciar a integração logo que puder & Prevenindo \\ \hline
+    R06 & Identificando & Controlar - Evitar comprar material de fora de brasília para ter a possibilidade de teste na hora da compra e deixar mais um fornecedor a pronta entrega & Controlando \\ \hline
+    R14 & Identificando & Mitigar - Procurar locais que possam ter o equipamento para,aluguel ou uso gratuito & Em andamento \\ \hline
+    R15 & Identificando & Controlar - Membros rotearem no celular & Controlando \\ \hline
+    \end{tabular}
+\end{table}
 
 \end{apendicesenv}
