@@ -180,4 +180,215 @@ Os principais riscos levantados inicialmente são:
 
 \chapter{Plano de Gerenciamento de Riscos}
 
+\subsection{Introdução}
+O propósito deste documento é identificar e mapear os riscos em busca de controlá-los e assim, minimizar fortemente os percentuais de falhas e possíveis fracassos em relação a gestão e desenvolvimento.
+
+\subsection{Metodologia}
+A metodologia para o gerenciamento dos riscos será baseada no modelo espiral definido por Boehm em 2004, onde a cada ciclo da espiral, é feito uma análise de riscos para validação. Neste projeto, será feito uma adaptação do modelo, as análises serão realizadas ao final de cada sprint.
+
+As ferramentas que serão utilizadas para a gerência dos riscos seguem uma ordem de apoio bem sincronizada, a primeira é o What if, que “é uma técnica qualitativa de cunho geral, de simples aplicação e muito útil como primeira abordagem na identificação e detecção de riscos, em qualquer fase do projeto ou processo.” [2], esta técnica será usada ao início de cada sprint e quando a equipe ver a necessidade e seus resultados serão guardados no registro de riscos. Método de utilização:
+Construir a seguinte tabela em grupo pensando nas atividades mais influenciadoras para sequência do projeto:
+
+\begin{table}[htp]
+    \centering
+    \caption{WhatIf}
+    \label{my-label}
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Atividade}} & \multicolumn{1}{c|}{\textbf{O que aconteceria se ?}} & \multicolumn{1}{c|}{\textbf{Causas}} & \textbf{Consequências} & \textbf{Observações} \\ \hline
+     &  &  &  &  \\ \hline
+    \end{tabular}
+\end{table}
+
+A segunda é o Checklist, onde “trata-se de uma ferramenta de contribuição, uma vez que precisa que os riscos já tenham sido identificados anteriormente em outros processos. Serve para verificar a aplicação das medidas recomendadas em processos de análise de risco anteriores. ”[4], ou seja, é uma ótima técnica para complementar o levantamento e monitoramento de aplicações de medidas contra os riscos. Método de uso do checklist:
+
+Após identificado os riscos, usando o What If e o registro dos riscos, deve-se elaborar uma lista com checklists verificando se as respostas ao riscos encontrados surtiram efeito. Então as ações de sucesso ficam guardadas. Exemplo:
+
+\begin{table}[htp]
+    \centering
+    \caption{Checklist}
+    \label{my-label}
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Risco}} & \multicolumn{1}{c|}{\textbf{Solução}} & \multicolumn{1}{c|}{\textbf{Resposta}} & \multicolumn{1}{c|}{\textbf{Observações}} \\ \hline
+     &  &  &  \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Processo de Gerência de Riscos}
+É definido, ainda no PMBOK, como será realizada a gerência, ou seja, a sequência de atividades que possibilitará o monitoramento dos riscos. Abaixo se encontra um diagrama que demonstra o processo que envolve este plano e logo em seguida é explicado cada etapa e sua associação com as ferramentas e fontes de dados escolhidos. O planejamento da gerência não é listado, pois já está fazendo parte da elaboração deste documento.
+
+\begin{center}
+	\includegraphics[scale=0.5]{figuras/processo-gerencia-riscos}
+	\captionof{figure}{Processo de Gerência de Riscos}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Planejar o Gerenciamento dos Riscos}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            Nesta fase é definido como as atividades de gerenciamento dos riscos serão dirigidas ao longo do projeto [1].
+            \item \textbf{Ferramentas e técnicas}
+            Reuniões e opinião especializada.
+        \end{itemize}
+    
+    \item \textbf{Identificar Riscos}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            Processo de determinação dos riscos que podem afetar o projeto e de documentação das suas características [1].
+            \item \textbf{Ferramentas e técnicas}
+            What If e análise de premissas.
+        \end{itemize}
+
+    \item \textbf{Analisar Qualitativamente}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de priorização de riscos para análise ou ação posterior através da avaliação e combinação de sua probabilidade de ocorrência e impacto [1].
+            \item \textbf{Ferramentas e técnicas}
+            Checklist, Avaliação de probabilidade e impacto dos riscos, matriz de probabilidade e impacto.
+        \end{itemize}
+    \item \textbf{Analisar Quantitativamente}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de analisar numericamente o efeito dos riscos identificados nos objetivos gerais do projeto.
+            \item \textbf{Ferramentas e técnicas}
+            Apresentação de dados e opinião especializada.
+        \end{itemize}
+    \item \textbf{Planejar Respostas}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de desenvolvimento de opções e ações para reduzir as ameaças aos objetivos do projeto.
+            \item \textbf{Ferramentas e técnicas}
+            Estratégias para riscos negativos ou ameaças e estratégias de respostas de contingência.
+        \end{itemize}
+    \item \textbf{Monitorar}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de implementar planos de respostas aos riscos, acompanhar os riscos identificados, monitorar riscos residuais, identificar novos riscos e avaliar a eficácia do processo de gerenciamento dos riscos durante todo o projeto.
+            \item \textbf{Ferramentas e técnicas}
+            Reavaliação de riscos, revisão técnica em pares e reuniões.
+        \end{itemize}
+\end{itemize}
+
+
+\subsection{Papéis e Responsabilidades}
+Os papéis e responsabilidades do projeto foram determinadas de forma que todos os líderes participem em conjunto nas áreas de identificação, no planejamento de respostas e no monitoramento colocando em prática as ferramentas escolhidas.
+
+\subsection{Prazos associados}
+Como foi definido no tópico de metodologia, ao iniciar cada sprint será realizada a análise e o planejamento das respostas. O monitoramento será feito ao longo de todo o processo. Mais precisamente, ao início de cada sprint, começará a gerência daquele ciclo de trabalho, acontecerão as análises, planejamentos e reavaliação para mudanças, pedido formal (volátil) e atualização de documentos (volátil).
+
+\subsection{Categoria de Riscos}
+Os riscos podem ser divididos em internos e externos. A montagem da EAR é interessantes pois, dividir os riscos em categorias facilita a ter uma visão mais ampla dos pontos “fracos” do projeto e que devem possuir uma maior atenção dos gestores. Essa categorização é possível de ser feita utilizando esse modelo, a qual ilustra bem as categorias dos riscos e sua hierarquia.
+
+\subsection{Análise dos Riscos}
+Em um Projeto de Engenharia, os riscos podem causar grande impacto caso não sejam bem mapeados e, visto isso, qualquer tipo de risco deve ser identificado e analisado cautelosamente. Devido essa necessidade, foi definido quatro atributos para analisar os riscos (Probabilidade, Impacto, Peso e Prioridade).
+
+Relacionado às possibilidades e chances de acontecimento de determinado risco, foram classificados 5 níveis: Raro, Improvável, Moderado, Provável e Quase Certo. 
+
+Em relação à impacto e quantificando o efeito potencial sobre o risco no projeto, comumente relacionados a escopo, custo, qualidade e tempo foram definidos outros 5 níveis distintos: Insignificante, Baixo, Moderado, Alto e Catastrófico.
+
+Logo após todas as definições, é realizada as de prioridades, onde foram classificados três níveis distintos: Prevenir, Controlar e Mitigar.
+
+
+\subsection{Definições de Probabilidades e Impactos de Riscos}
+Foram definidos faixas de valores e definições. Logo abaixo, foram construídas tabelas para fornecer base ao registro dos riscos.
+
+A equipe deve se reunir para, com base nas experiências, no material de referência e nas ferramentas propostas, definir qual a probabilidade de determinado risco acontecer e seu impacto no projeto. As escalas de probabilidade são definidas em Raro, Improvável, Moderado, Provável e Quase Certo, e as escalas de impacto são definidas em Insignificante, Baixo, Moderado, Alto e Catastrófico.
+
+\begin{table}[htp]
+    \centering
+    \caption{Pesos para faixas de Probabilidades}
+    \label{my-label}
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Probabilidade (P)} & \textbf{Peso} \\ \hline
+    Raro(\textless 10\%) & 0.2 \\ \hline
+    Improvável (10\% - 25\%) & 0.4 \\ \hline
+    Moderado (25\% - 50\%) & 0.6 \\ \hline
+    Provável (50\% - 75\%) & 0.8 \\ \hline
+    Quase Certo (\textgreater 75\%) & 1.0 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[htp]
+    \centering
+    \caption{Pesos para faixas de Impacto}
+    \label{my-label}
+    \begin{tabular}{|p{0.15\linewidth}|p{0.55\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Impacto (I)} & \textbf{Descrição} & \textbf{Peso} \\ \hline
+    Insignificante & Quase que imperceptível & 0.05 \\ \hline
+    Baixo & Pouca influência no desenvolvimento do projeto & 0.10 \\ \hline
+    Moderado & Notável ao projeto, mas sem grandes consequências & 0.20 \\ \hline
+    Alto & Dificulta o desenvolvimento do projeto & 0.40 \\ \hline
+    Catastrófico & Impossibilita o prosseguimento do projeto & 0.80 \\ \hline
+    \end{tabular}
+\end{table}
+
+A equipe definiu, usando como base no guia PmBok, que os principais objetivos do projeto são Custo, Tempo, Escopo e Qualidade. Com isso, foi construída uma tabela, com base nas escalas de impacto dos riscos, em que é inserido descrições de condições e tolerâncias dentro de cada objetivo de projeto para que assim, se tenha noção do que pode ocorrer caso o risco não seja controlado.
+
+\begin{table}[htp]
+    \centering
+    \caption{Condições e Tolerâncias para as Escalas de Impacto de um Risco}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|}
+    \hline
+    \textbf{Impacto / Objetivo} & \textbf{Custo} & \textbf{Tempo} & \textbf{Escopo} & \textbf{Qualidade} \\ \hline
+    \textbf{Insignificante} & Aumento insignificante & Aumento dentro do esperado & Diminuição insignificante & Degradação insignificante \\ \hline
+    \textbf{Baixo} & Aumento dentro do esperado & Aumento negociável & Áreas secundárias afetadas & Somente aplicações muito exigentes são afetadas \\ \hline
+    \textbf{Moderado} & Aumento negociável & Trabalho lento & Áreas principais afetadas & Redução requer aprovação,do orientador \\ \hline
+    \textbf{Alto} & Recurso com falhas ou defeitos & Produto final incompleto & Redução do escopo,inaceitável para os orientadores & Redução de qualidade inaceitável para os orientadores \\ \hline
+    \textbf{Catastrófico} & Recursos inúteis & Produto final é efetivamente inútil & Produto final é efetivamente inútil & Produto final é efetivamente inútil \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Matriz de Probabilidade e Impacto}
+A tabela abaixo, definida como matriz, e baseada nas tabelas 1 e 2, possibilita a definição de um valor de peso para o risco.
+
+\begin{table}[htp]
+    \centering
+    \caption{Pesos dos Riscos (PxI)}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.18\linewidth}|p{0.10\linewidth}|p{0.15\linewidth}|p{0.10\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Impacto / Objetivo} & \textbf{Insignificante} & \textbf{Baixo} & \textbf{Moderado} & \textbf{Alto} & \textbf{Catastrófico} \\ \hline
+    \textbf{Raro} & 0.01 & 0.02 & 0.04 & 0.08 & 0.16 \\ \hline
+    \textbf{Improvável} & 0.02 & 0.04 & 0.08 & 0.16 & 0.32 \\ \hline
+    \textbf{Moderado} & 0.03 & 0.06 & 0.12 & 0.24 & 0.48 \\ \hline
+    \textbf{Provável} & 0.04 & 0.08 & 0.16 & 0.32 & 0.64 \\ \hline
+    \textbf{Quase Certo} & 0.05 & 0.10 & 0.20 & 0.40 & 0.80 \\ \hline
+    \end{tabular}
+\end{table}
+
+Com base na matriz elaborada, é possível definir o cenário do projeto para cada peso (PxI).
+
+\begin{table}[htp]
+    \centering
+    \caption{Faixas de cenários}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.17\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Impacto / Objetivo} & \textbf{Insignificante} & \textbf{Baixo} & \textbf{Moderado} & \textbf{Alto} & \textbf{Catastrófico} \\ \hline
+    \textbf{Raro} & Equilibrado & Equilibrado & Equilibrado & Alerta & Alerta \\ \hline
+    \textbf{Improvável} & Equilibrado & Equilibrado & Alerta & Alerta & Crítico \\ \hline
+    \textbf{Moderado} & Equilibrado & Alerta & Alerta & Crítico & Crítico \\ \hline
+    \textbf{Provável} & Equilibrado & Alerta & Alerta & Crítico & Crítico \\ \hline
+    \textbf{Quase Certo} & Alerta & Alerta & Crítico & Crítico & Crítico \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+
+Resposta:
+\begin{itemize}
+    \item Equilibrado -> Prevenir
+    \item Alerta -> Controlar
+    \item Crítico -> Mitigar
+\end{itemize}
+
+Caso se tenha que escolher entre dois riscos que tenha o mesmo cenário e a mesma resposta, a prioridade é do com o maior valor de peso, e se esse valor também for igual, os riscos analisados devem ser avaliados ao mesmo tempo.
+
+\subsection{Controle e Rastreabilidade}
+Utilizando este documento como base, é possível elaborar o Registro dos Riscos (RR) para se ter noção de todos os riscos que podem afetar o projeto de forma negativa ou positiva. Os riscos sendo mapeados no RR, é possível ter a noção da prioridade e forma de controle de cada um criando assim, a rastreabilidade de todos. Para garantir a qualidade das atividades de controle sobre os riscos, serão feitas inspeções informais ao início de cada sprint elaborando assim, um relatório de controle com situação de combate, prioridade e pedidos de mudanças sobre os riscos monitorados.
+
 \end{apendicesenv}
