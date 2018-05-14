@@ -1,0 +1,488 @@
+\begin{apendicesenv}
+
+\partapendices
+
+\chapter{Termo de Abertura do Projeto}
+
+\subsection{Objetivos deste documento}
+
+Mesmo já havendo um consenso de ideia geral sobre o projeto, o TAP vem para autorizar formalmente o seu desenvolvimento, seja para as fases seguintes de planejamento, seja para construção efetiva da proposta. Ele também auxilia na definição de entregas por meio da EAP, no levantamento de requisitos, premissas e restrições, além de dar o grande suporte para o resto do planejamento, custo, riscos, tempo, escopo etc.
+
+Elaborado este documento, o gerente de projetos tem a autorização, o poder e a base para o gerenciar corretamente todos os recursos disponíveis e otimizar seu planejamento durante o desenvolvimento do produto. Não deve ser esquecido que este documento deve ser descrito de forma que forneça suporte suficiente na aceitação ou não do projeto.
+
+
+\subsection{Descrição do Projeto}
+
+O projeto é uma máquina automática que auxilia no processo de reciclagem de garrafas. A ideia central é a de que o usuário insira garrafas de vidro ou plástico e seja bonificado por essa ação, onde tal, possa ser desconto em supermecados e estes dados serão mantidos por um aplicativo com contas individuais. A máquina deverá realizar a separação e validação (material, tamanho e peso) automática dos objetos inseridos, guardando a garrfas de vidro sem quebrá-las, triturando as de plástico e rejeitando qualquer outro tipo de inserção.
+
+\subsection{Justificativa do Projeto}
+
+A poluição global é um tema que visivelmente está sempre em discussão na mídia e nos governos por seu grande potência destrutivo. Dois dos grandes tipos de poluição que podem ser comentadas neste projeto são as de solo e do mar, sendo o motivo desta escolha comentado mais a frente, e é evidente que se sabe que o causador dessa agressão a esses dois tipos é o grande volume de material industrial criado pelo ser humano. Buscando minimizar esse problema, são realizadas diversas ações de reciclagem e conscientização ao redor do globo, sendo assim, este projeto vem com o intuito de criar um produto que motive estes dois fatores.
+
+Para o desenvolvimento de um protótipo foram escolhidos dois tipos de materiais a serem coletados a partir das informações a seguir. O primeiro foi o plástico, pois segundo o site \cite{ecycle}, pesquisadores da The University of  Western Australia e da CSIRO Wealth from Oceans Flagship realizaram um estudo no mar australiano e concluíram que a cada quilômetro quadrado de água de sua superfície está contaminado por cerca de quatro mil pequenos fragmentos de plástico. Segundo o site da Globo \cite{oglobo}, até 2015 tinham sido produzidos cerca de 6,3 bilhões de toneladas de resíduos plásticos e 79\% deste montante se encontra em aterros ou na natureza. Segundo o site \cite{culturamix}, sacolas plásticas e garrafas PETs são os maiores vilões da natureza pelo tempo de decomposição e pelo consumo destes materiais por animais. E o segundo foi o vidro pelo alto consumo de produtos mantidas em recipientes feitos deste material, o vidro pode causar queimadas na natureza por potencializar os raios solares e animais podem morrer ao ingerir pedaços cortantes. Portanto, serão dois materiais que causarão um grande impacto de projeto e eles estão diretamente ligados às poluições marítimas e de solo.
+
+Outro fator que justifica a proposta deste projeto, são os impactos positivos para os usuários, que poderão receber créditos pela sua ação, empresas de reciclagem, que terão economia de armazenamento e manuseio, o governo, que terá seu nome em um projeto de apoio ambiental, os mercados, que poderão atrair mais clientes com promoções por conta da máquina e empresas geradoras dos resíduos já que pela lei nacional, elas são responsáveis pelo seus resíduos sólidos.
+
+\subsection{Objetivos do Projeto}
+
+O máquina tem como objetivos principais o incetivo a reciclagem por meio de um sistema de bonificações, o auxílio a coleta de material para as empresas de reciclagem e auxílio às empresas geradoras de resíduos sólidos já que elas são responsáveis pelo o que produz.
+
+\subsection{Critérios de sucesso do projeto}
+
+Tomando como referência o contexto de implantação do produto, os critérios de sucesso do projeto envolvem a dedicação máxima e estudo contínuo da equipe em seus subsistemas já que em sua maioria não se há investimento e nem experiência de trabalho. Rigorosa adesão ao planejamento e gerenciamento do projeto. Alcance dos requisitos levantados e integração completa.
+
+\subsection{Estrutura Analítica do Projeto}
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.4]{figuras/eap}
+	\caption{Estrutua Analítica do Projeto.}
+\end{figure}
+
+A EAP deste projeto está divida com base nas entregas definidas pelos orientadores. Como em todo projeto que se preze, o desenvolvimento do produto se sustenta na definição de um problema, elaboração de uma solução, construção do produto da solução e implantação e teste deste produto, logo abaixo estão descritos cada tópico da estrutura analítica voltados às necessidades de acompanhamento e gerência dos subsistemas deste projeto.
+
+\begin{itemize}
+    \item \textbf{Definição do projeto}
+        Todo novo desenvolvimento de produto se inicia com a definição completa e planejada de um escopo geral e validado. Para começar, de forma geral, não seria viável a elaboração de um produto que não se resolve nenhum problema, sendo assim, é interessante a fase de definição ser divida na \textbf{Problematização} e \textbf{Concepção} baseada no ideia levantada.
+        \begin{itemize}
+            \item \textbf{Problematização}
+                Essa fase envolve a aplicação de brainstormings para que o grupo possa avaliar o que há de problemas baseados na ideia central de projeto, para que assim, sejam anotados de forma planejada alguma de suas soluções que estejam ao alcance às áreas de conhecimento dos cursos da FGA. Em seguida, o problema deve ser refinado, de forma, que forneça base para a concepção completa e compreensível do escopo geral do produto que no caso é a solução proposta e para a análise da viabilidade técnica e financeira.
+            \item \textbf{Concepção}
+                Tendo sido levantada a ideia geral do projeto, aqui devem ser feitas os detalhamentos da arquitetura básica da solução, dos objetivos, regras de negócio e planejamento.
+        \end{itemize}
+    
+    \item \textbf{Construção de Subsistemas}
+        Após concretizado a definição do projeto, é o momento de iniciar o processo de desenvolvimento da máquina. Procurando facilitar a visão geral e organização, este processo foi divido em 4 atividades chaves:
+        \begin{itemize}
+            \item \textbf{Modelagem / Simulações}
+                Uso do CAD, realização de cálculos diversos, uso de ferramentas de modelagem e geração de modelos de protótipos.
+            \item \textbf{Construir componentes / Subsistemas}
+                O sistema total do projeto foi dividido em 4 subsistemas com base nas áreas das engenharias com o intuito de otimizar a produtividade desacoplando as áreas. Nesta fase que acontece a construção real da máquina.
+            \item \textbf{Testar componentes / Subsistemas}
+                Fase de aplicação de plano de testes do componentes dentro dos subsistemas.
+            \item \textbf{Avaliar e homologar resultados}
+                Finalizado os testes, este é o momento de avaliar os resultados para levantamento do que deve ser otimizado afim de adaptar os componentes à atividade de integração. 
+        \end{itemize}
+
+    \item \textbf{Integração de Subsistemas}
+        Esta em tese é a atividade mais complexa e que se tem um histórico alto de falhas, sendo assim, é necessário uma ótima preparação antecipada.
+\end{itemize}
+
+\subsection{Requisitos}
+\subsubsection{Requisitos de Alto Nível}
+O sistema proposta será um máquina com sua estrutura do tamanho de uma geladeira pequena no formato retangular, a estrutura interna será dividida em acordo com os subsistemas do produto total. Haverão dois compartimentos removíveis, um para o armazenamento de plástico triturado e outro para armazenar vidro, sendo os materiais aceitos pela máquina apenas como garrafas. Contando que o plástico será guardado em pedaços triturados, deverá haver um triturador que será ligado a partir de um motor em conjunto com um redutor. Já o vidro deverá ser armazenado intacto pilhando as garrafas.
+
+Para armazenar algo, deve-se ter a devida validação daquilo que for aceito como armazenável ou não, e também deve-se ter uma estrutura de separação de materiais que os conduzam por estruturas diferentes, para que assim, atenda os cuidados requeridos que inferem aos requisitos necessários a cada material. Sendo assim, logo na frente da máquina, terá a validação do objeto inserido por meio de um QR Code que virá contido no rótulo, logo no bocal de inserção haverá uma outra validação mais completa em que passada dela, a garrafa será direcionada ao ponto final de armazenamento.
+
+A máquina deverá ter um sistema de recompensa ao usuário por cada garrafa depositada, onde essa atividade será administrada por meio de um aplicativo. Haverá um banco de dados com as características de cada rótulo identificado para validação de entrada e de pontuação. Por fim terá um sistema de segurança de parada do motor.
+
+\subsubsection{Principais requisitos das principais entregas/produtos}
+
+\begin{itemize}
+    \item{Armazenamento de garrafas de plástico e vidro}
+    \item{Armazenamento separado dos tipos de material}
+    \item{Triturar as garrafas de plástico}
+    \item{Armazenar em intacta as garrafas de vidro}
+    \item{Bonificar os usuários por cada garrafa}
+    \item{Manter dados do usuário em um aplicativo}
+\end{itemize}
+
+\subsection{Marcos}
+
+\begin{table}[htp]
+    \centering
+    \caption{Marcos}
+    \label{my-label}
+    \begin{tabular}{|p{0.25\linewidth}|p{0.65\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Fase}} & \multicolumn{1}{c|}{\textbf{Marcos}} & \multicolumn{1}{c|}{\textbf{Previsão}} \\ \hline
+    Iniciação & Projeto Aprovado & 28/03/2018 \\ \hline
+    Planejamento & Plano de Gerenciamento de Projetos Aprovado & 28/03/2018 \\ \hline
+     & Linhas de Base de Custos, Prazo e Escopos Salvas & 28/03/2018 \\ \hline
+    Execução, Monitoramento e Controle & Desenvolvimento dos subsistemas & 16/05/2018 \\ \hline
+    Encerramento & Integração & 26/05/2018 \\ \hline
+     & Testes & 06/06/2018 \\ \hline
+     & Projeto Entregue & 22/06/2018 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Partes interessadas do projeto}
+
+É preferível pela equipe de trabalho que as partes interessadas sejam divididas em dois grupos, o primeiro são os reais interessados dentro do contexto e escopo atual que é a matéria do curso, e o segundo são os possíveis interessados em uma possível implantação comercial deste produto.
+
+\subsubsection{Partes interessadas em cenário acadêmico}
+
+\begin{table}[htp]
+    \centering
+    \caption{Cenário acadêmico}
+    \label{my-label}
+    \begin{tabular}{|p{0.30\linewidth}|p{0.30\linewidth}|p{0.30\linewidth}|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{Função}} & \multicolumn{1}{c|}{\textbf{Interesse}} \\ \hline
+    Professores da Matéria Projeto Integrador II do Campus de Engenharias da UnB & Orientar e avaliar os alunos no desenvolvimento do projeto & Orientar e avaliar os alunos no desenvolvimento do projetoSaber se os alunos da matéria estão hábeis a serem egressos da universidade \\ \hline
+    Alunos da Matéria Projeto Integrador II do Campus de Engenharias da UnB & Desenvolver o projeto & Receber feedback da qualidade do projeto e da qualidade de trabalho. \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Partes interessadas em cenário de mercado}
+
+\begin{table}[htp]
+    \centering
+    \caption{Cenário de mercado}
+    \label{my-label}
+    \begin{tabular}{|p{0.30\linewidth}|p{0.30\linewidth}|p{0.30\linewidth}|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{Função}} & \multicolumn{1}{c|}{\textbf{Interesse}} \\ \hline
+    Clientes de supermercado & Utilizar a máquina & Ser bonificado pelo uso \\ \hline
+    Empresas de reciclagem & Buscar e reciclar o material armazenado pela máquina & Economizar em manuseio e transporte do material \\ \hline
+    Empresas geradoras de Resíduos Sólidos & Gerar os resíduos sólidos & Economia na gerência de seus resíduos \\ \hline
+    Governo & Aplicar e apoiar serviços deste cunho & Ter um projeto deste cunho vinculado ao seu nome \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Restrições}
+O projeto está restrito a ser um protótipo por conta do tempo de projeto (um semestre letivo), inexperiência da equipe (primeiro experiência de projeto em conjunto com o intuito de integração de várias áreas de engenharia) e falta de orçamento (máximo de R\$ 3.900,00).
+
+\subsubsection{Premissas}
+\begin{itemize}
+    \item{Os testes de uso serão realizados apenas com os integrantes do time de desenvolvimento}
+    \item{O tempo de trituração poderá ser avaliado apenas durante o desenvolvimento}
+    \item{A prova de integração entre o aplicativo e a máquina será via display simples}
+    \item{A disponibilidade de horário comum da equipe é apenas no horário de aula}
+    \item{Não haverá recursos vindos de fora da equipe}
+\end{itemize}
+
+\subsubsection{Riscos}
+Os principais riscos levantados inicialmente são:
+\begin{itemize}
+    \item{Inexperiência dos membros da equipe com ferramentas e tecnologias a serem utilizadas}
+    \item{Peças que demoram a ser obtidas estarem com defeito}
+    \item{Aceito não gratuito a equipamentos de alto curto realmente necessários}
+    \item{Falta de espaço para construção da estrutura}
+    \item{Falha na integração}
+\end{itemize}
+
+\subsubsection{Orçamento do Projeto}
+\begin{table}[htp]
+    \centering
+    \caption{Orçamento}
+    \label{orcamento}
+    \begin{tabular}{|l|l|}
+    \hline
+    Ambiente do Usuário & R\$ 00,00 \\ \hline
+    Sistema de Controle de Energia e Segurança & R\$ 1370,00 \\ \hline
+    Estrutura & R\$ - \\ \hline
+    Sistema Eletrônico & R\$ 520,00 \\ \hline
+    \multicolumn{2}{|c|}{\textbf{R\$ 1.890,00}} \\ \hline
+    \end{tabular}
+\end{table}
+    
+
+\chapter{Plano de Gerenciamento de Riscos}
+
+\subsection{Introdução}
+O propósito deste documento é identificar e mapear os riscos em busca de controlá-los e assim, minimizar fortemente os percentuais de falhas e possíveis fracassos em relação a gestão e desenvolvimento.
+
+\subsection{Metodologia}
+A metodologia para o gerenciamento dos riscos será baseada no modelo espiral definido por Boehm em 2004, onde a cada ciclo da espiral, é feito uma análise de riscos para validação. Neste projeto, será feito uma adaptação do modelo, as análises serão realizadas ao final de cada sprint.
+
+As ferramentas que serão utilizadas para a gerência dos riscos seguem uma ordem de apoio bem sincronizada, a primeira é o What if, que “é uma técnica qualitativa de cunho geral, de simples aplicação e muito útil como primeira abordagem na identificação e detecção de riscos, em qualquer fase do projeto ou processo.” \cite{blogtek}, esta técnica será usada ao início de cada sprint e quando a equipe ver a necessidade e seus resultados serão guardados no registro de riscos. Método de utilização:
+Construir a seguinte tabela em grupo pensando nas atividades mais influenciadoras para sequência do projeto:
+
+\begin{table}[htp]
+    \centering
+    \caption{WhatIf}
+    \label{my-label}
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Atividade}} & \multicolumn{1}{c|}{\textbf{O que aconteceria se ?}} & \multicolumn{1}{c|}{\textbf{Causas}} & \textbf{Consequências} & \textbf{Observações} \\ \hline
+     &  &  &  &  \\ \hline
+    \end{tabular}
+\end{table}
+
+A segunda é o Checklist, onde “trata-se de uma ferramenta de contribuição, uma vez que precisa que os riscos já tenham sido identificados anteriormente em outros processos. Serve para verificar a aplicação das medidas recomendadas em processos de análise de risco anteriores. ”\cite{qualidadesimples}, ou seja, é uma ótima técnica para complementar o levantamento e monitoramento de aplicações de medidas contra os riscos. Método de uso do checklist:
+
+Após identificado os riscos, usando o What If e o registro dos riscos, deve-se elaborar uma lista com checklists verificando se as respostas ao riscos encontrados surtiram efeito. Então as ações de sucesso ficam guardadas. Exemplo:
+
+\begin{table}[htp]
+    \centering
+    \caption{Checklist}
+    \label{my-label}
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Risco}} & \multicolumn{1}{c|}{\textbf{Solução}} & \multicolumn{1}{c|}{\textbf{Resposta}} & \multicolumn{1}{c|}{\textbf{Observações}} \\ \hline
+     &  &  &  \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Processo de Gerência de Riscos}
+É definido, ainda no PMBOK, como será realizada a gerência, ou seja, a sequência de atividades que possibilitará o monitoramento dos riscos. Abaixo se encontra um diagrama que demonstra o processo que envolve este plano e logo em seguida é explicado cada etapa e sua associação com as ferramentas e fontes de dados escolhidos. O planejamento da gerência não é listado, pois já está fazendo parte da elaboração deste documento.
+
+\begin{center}
+	\includegraphics[scale=0.5]{figuras/processo-gerencia-riscos}
+	\captionof{figure}{Processo de Gerência de Riscos}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Planejar o Gerenciamento dos Riscos}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            Nesta fase é definido como as atividades de gerenciamento dos riscos serão dirigidas ao longo do projeto \cite{pmbok2004guia}.
+            \item \textbf{Ferramentas e técnicas}
+            Reuniões e opinião especializada.
+        \end{itemize}
+    
+    \item \textbf{Identificar Riscos}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            Processo de determinação dos riscos que podem afetar o projeto e de documentação das suas características \cite{pmbok2004guia}.
+            \item \textbf{Ferramentas e técnicas}
+            What If e análise de premissas.
+        \end{itemize}
+
+    \item \textbf{Analisar Qualitativamente}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de priorização de riscos para análise ou ação posterior através da avaliação e combinação de sua probabilidade de ocorrência e impacto \cite{pmbok2004guia}.
+            \item \textbf{Ferramentas e técnicas}
+            Checklist, Avaliação de probabilidade e impacto dos riscos, matriz de probabilidade e impacto.
+        \end{itemize}
+    \item \textbf{Analisar Quantitativamente}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de analisar numericamente o efeito dos riscos identificados nos objetivos gerais do projeto.
+            \item \textbf{Ferramentas e técnicas}
+            Apresentação de dados e opinião especializada.
+        \end{itemize}
+    \item \textbf{Planejar Respostas}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de desenvolvimento de opções e ações para reduzir as ameaças aos objetivos do projeto.
+            \item \textbf{Ferramentas e técnicas}
+            Estratégias para riscos negativos ou ameaças e estratégias de respostas de contingência.
+        \end{itemize}
+    \item \textbf{Monitorar}
+        \begin{itemize}
+            \item \textbf{Objetivo}
+            O processo de implementar planos de respostas aos riscos, acompanhar os riscos identificados, monitorar riscos residuais, identificar novos riscos e avaliar a eficácia do processo de gerenciamento dos riscos durante todo o projeto.
+            \item \textbf{Ferramentas e técnicas}
+            Reavaliação de riscos, revisão técnica em pares e reuniões.
+        \end{itemize}
+\end{itemize}
+
+
+\subsection{Papéis e Responsabilidades}
+Os papéis e responsabilidades do projeto foram determinadas de forma que todos os líderes participem em conjunto nas áreas de identificação, no planejamento de respostas e no monitoramento colocando em prática as ferramentas escolhidas.
+
+\subsection{Prazos associados}
+Como foi definido no tópico de metodologia, ao iniciar cada sprint será realizada a análise e o planejamento das respostas. O monitoramento será feito ao longo de todo o processo. Mais precisamente, ao início de cada sprint, começará a gerência daquele ciclo de trabalho, acontecerão as análises, planejamentos e reavaliação para mudanças, pedido formal (volátil) e atualização de documentos (volátil).
+
+\subsection{Categoria de Riscos}
+No contexto deste projeto, para ter uma visão compacta e de fácil gerenciamento, os riscos foram divididos apenas em internos e externos. Dividir os riscos em categorias facilita a ter uma visão mais ampla dos pontos “fracos” do projeto e que devem possuir uma maior atenção dos gestores.
+
+\subsubsection{Interno}
+Fatores internos são atribuições que podem afetar o projeto de dentro do contexto da equipe. São inerentes ao projeto, controlado pelo líder, que utiliza ações e atividades diretas para mitiga-los.[6]
+
+\subsubsection{Externo}
+Fatores externos são atribuições que podem afetar o projeto de fora do contexto da equipe. Podem ser influenciados pelo líder, mas não é possível controlá-los [6]. Sendo assim, são colocadas formas de preveção contra esses tipos de riscos.
+
+\subsection{Análise dos Riscos}
+Em um Projeto de Engenharia, os riscos podem causar grande impacto caso não sejam bem mapeados e, visto isso, qualquer tipo de risco deve ser identificado e analisado cautelosamente. Devido essa necessidade, foi definido quatro atributos para analisar os riscos (Probabilidade, Impacto, Peso e Prioridade).
+
+Relacionado às possibilidades e chances de acontecimento de determinado risco, foram classificados 5 níveis: Raro, Improvável, Moderado, Provável e Quase Certo. 
+
+Em relação à impacto e quantificando o efeito potencial sobre o risco no projeto, comumente relacionados a escopo, custo, qualidade e tempo foram definidos outros 5 níveis distintos: Insignificante, Baixo, Moderado, Alto e Catastrófico.
+
+Logo após todas as definições, é realizada as de prioridades, onde foram classificados três níveis distintos: Prevenir, Controlar e Mitigar.
+
+
+\subsection{Definições de Probabilidades e Impactos de Riscos}
+Foram definidos faixas de valores e definições. Logo abaixo, foram construídas tabelas para fornecer base ao registro dos riscos.
+
+A equipe deve se reunir para, com base nas experiências, no material de referência e nas ferramentas propostas, definir qual a probabilidade de determinado risco acontecer e seu impacto no projeto. As escalas de probabilidade são definidas em Raro, Improvável, Moderado, Provável e Quase Certo, e as escalas de impacto são definidas em Insignificante, Baixo, Moderado, Alto e Catastrófico.
+
+\begin{table}[htp]
+    \centering
+    \caption{Pesos para faixas de Probabilidades}
+    \label{my-label}
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Probabilidade (P)} & \textbf{Peso} \\ \hline
+    Raro(\textless 10\%) & 0.2 \\ \hline
+    Improvável (10\% - 25\%) & 0.4 \\ \hline
+    Moderado (25\% - 50\%) & 0.6 \\ \hline
+    Provável (50\% - 75\%) & 0.8 \\ \hline
+    Quase Certo (\textgreater 75\%) & 1.0 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[htp]
+    \centering
+    \caption{Pesos para faixas de Impacto}
+    \label{my-label}
+    \begin{tabular}{|p{0.15\linewidth}|p{0.55\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Impacto (I)} & \textbf{Descrição} & \textbf{Peso} \\ \hline
+    Insignificante & Quase que imperceptível & 0.05 \\ \hline
+    Baixo & Pouca influência no desenvolvimento do projeto & 0.10 \\ \hline
+    Moderado & Notável ao projeto, mas sem grandes consequências & 0.20 \\ \hline
+    Alto & Dificulta o desenvolvimento do projeto & 0.40 \\ \hline
+    Catastrófico & Impossibilita o prosseguimento do projeto & 0.80 \\ \hline
+    \end{tabular}
+\end{table}
+
+A equipe definiu, usando como base no guia PmBok, que os principais objetivos do projeto são Custo, Tempo, Escopo e Qualidade. Com isso, foi construída uma tabela, com base nas escalas de impacto dos riscos, em que é inserido descrições de condições e tolerâncias dentro de cada objetivo de projeto para que assim, se tenha noção do que pode ocorrer caso o risco não seja controlado.
+
+\begin{table}[htp]
+    \centering
+    \caption{Condições e Tolerâncias para as Escalas de Impacto de um Risco}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|}
+    \hline
+    \textbf{Impacto / Objetivo} & \textbf{Custo} & \textbf{Tempo} & \textbf{Escopo} & \textbf{Qualidade} \\ \hline
+    \textbf{Insignificante} & Aumento insignificante & Aumento dentro do esperado & Diminuição insignificante & Degradação insignificante \\ \hline
+    \textbf{Baixo} & Aumento dentro do esperado & Aumento negociável & Áreas secundárias afetadas & Somente aplicações muito exigentes são afetadas \\ \hline
+    \textbf{Moderado} & Aumento negociável & Trabalho lento & Áreas principais afetadas & Redução requer aprovação,do orientador \\ \hline
+    \textbf{Alto} & Recurso com falhas ou defeitos & Produto final incompleto & Redução do escopo,inaceitável para os orientadores & Redução de qualidade inaceitável para os orientadores \\ \hline
+    \textbf{Catastrófico} & Recursos inúteis & Produto final é efetivamente inútil & Produto final é efetivamente inútil & Produto final é efetivamente inútil \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Matriz de Probabilidade e Impacto}
+A tabela abaixo, definida como matriz, e baseada nas tabelas 8 e 9, possibilita a definição de um valor de peso para o risco.
+
+\begin{table}[htp]
+    \centering
+    \caption{Pesos dos Riscos (PxI)}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.18\linewidth}|p{0.10\linewidth}|p{0.15\linewidth}|p{0.10\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Impacto / Objetivo} & \textbf{Insignificante} & \textbf{Baixo} & \textbf{Moderado} & \textbf{Alto} & \textbf{Catastrófico} \\ \hline
+    \textbf{Raro} & 0.01 & 0.02 & 0.04 & 0.08 & 0.16 \\ \hline
+    \textbf{Improvável} & 0.02 & 0.04 & 0.08 & 0.16 & 0.32 \\ \hline
+    \textbf{Moderado} & 0.03 & 0.06 & 0.12 & 0.24 & 0.48 \\ \hline
+    \textbf{Provável} & 0.04 & 0.08 & 0.16 & 0.32 & 0.64 \\ \hline
+    \textbf{Quase Certo} & 0.05 & 0.10 & 0.20 & 0.40 & 0.80 \\ \hline
+    \end{tabular}
+\end{table}
+
+Com base na matriz elaborada, é possível definir o cenário do projeto para cada peso (PxI).
+
+\begin{table}[htp]
+    \centering
+    \caption{Faixas de cenários}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.17\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Impacto / Objetivo} & \textbf{Insignificante} & \textbf{Baixo} & \textbf{Moderado} & \textbf{Alto} & \textbf{Catastrófico} \\ \hline
+    \textbf{Raro} & Equilibrado & Equilibrado & Equilibrado & Alerta & Alerta \\ \hline
+    \textbf{Improvável} & Equilibrado & Equilibrado & Alerta & Alerta & Crítico \\ \hline
+    \textbf{Moderado} & Equilibrado & Alerta & Alerta & Crítico & Crítico \\ \hline
+    \textbf{Provável} & Equilibrado & Alerta & Alerta & Crítico & Crítico \\ \hline
+    \textbf{Quase Certo} & Alerta & Alerta & Crítico & Crítico & Crítico \\ \hline
+    \end{tabular}
+\end{table}
+
+Resposta:
+\begin{itemize}
+    \item Equilibrado -> Prevenir
+    \item Alerta -> Controlar
+    \item Crítico -> Mitigar
+\end{itemize}
+
+Caso se tenha que escolher entre dois riscos que tenha o mesmo cenário e a mesma resposta, a prioridade é do com o maior valor de peso, e se esse valor também for igual, os riscos analisados devem ser avaliados ao mesmo tempo.
+
+\subsection{Controle e Rastreabilidade}
+Utilizando este documento como base, é possível elaborar o Registro dos Riscos (RR) para se ter noção de todos os riscos que podem afetar o projeto de forma negativa ou positiva. Os riscos sendo mapeados no RR, é possível ter a noção da prioridade e forma de controle de cada um criando assim, a rastreabilidade de todos. Para garantir a qualidade das atividades de controle sobre os riscos, serão feitas inspeções informais ao início de cada sprint elaborando assim, um relatório de controle com situação de combate, prioridade e pedidos de mudanças sobre os riscos monitorados.
+
+\chapter{Registro dos Riscos}
+
+\subsection{WhatIf}
+\begin{table}[htp]
+    \centering
+    \caption{WhatIf}
+    \label{my-label}
+    \begin{tabular}{|p{0.18\linewidth}|p{0.18\linewidth}|p{0.18\linewidth}|p{0.20\linewidth}|p{0.18\linewidth}|}
+    \hline
+    \textbf{Atividade} & \textbf{O que aconteceria se ?} & \textbf{Causas} & \textbf{Consequências} & \textbf{Observações} \\ \hline
+    Construção da estrutura & Quebrasse uma ferramenta & Descuido & Deve-se comprar outra & Quem quebrou paga \\ \hline
+    Construção do app & Não for possível integrar com a máquina & Falta de conhecimento & Requisito de bonificação incompleto & Estudo frequente \\ \hline
+    Compra de material & Viesse errado ou com defeito & Descuido de quem comprou, erro de fábrica ou descuido da empresa de transporte & Atraso no desenvolvimento e aumento nos custos & Fez a decisão de compra errada sozinho, paga sozinho. Veio com defeito, o grupo paga \\ \hline
+    Integração do projeto & Algum subsistema não estiver pronto & Irresponsabilidade dos responsáveis ou falta de conhecimento & Diminuição na nota de todo o grupo & Se estiver dependendo de um subsistema, tente ajudar os responsáveis ao,máximoSe o responsável não estiver trabalhando, avise a equipe para que,todos,avisem os professores \\ \hline
+    Desenvolvimento do projeto & Um integrante saisse & Motivos pessoais & Trabalho sem alocação & Todos devem infomar certas ações com bastante antecedência \\ \hline
+    Desenvolvimento do projeto & Não tiver o material no galpão & Outro grupo tomou posse ou não tem & Aumento no custo & Procurar se há a disponibilidade do material ou da ferramenta de forma gratuita em algum lugar de Brasília \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Tabela de Registros}
+\begin{table}[!htp]
+    \centering
+    \caption{Registros dos Riscos}
+    \label{my-label}
+    \begin{tabular}{|p{0.10\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|}
+    \hline
+    \textbf{ID} & \textbf{Descrição} & \textbf{Causa} & \textbf{Impacto descrito} \\ \hline
+    R01 & Queima de equipamento por descarga elétrica & Descuido de quem estiver ligando o equipamento & Aumento no custo e tempo do projeto \\ \hline
+    R02 & Atraso na entrega de material & Fornecedor não tem ou falha no processo de entrega & Parte do projeto não pode ser feito \\ \hline
+    R03 & Erro de dimensionamento dos subsistemas & Descuido do responsável pela atividade & Retrabalho \\ \hline
+    R04 & Falha de integração entre o app e a máquina & Falta de conhecimento dos envolvidos & Requisito de bonificação não finalizado \\ \hline
+    R05 & Falha de integração dos subsistemas da máquina & Falta de tempo ou conhecimento dos envolvidos & Não haverá um produto para apresentar \\ \hline
+    R06 & Material com defeito & Defeito de fábrica ou descuido & Parte do projeto não pode ser feito \\ \hline
+    R07 & Integrante se ausenta da disciplina & Causa pessoal & Maior volume de trabalho para os outros membros \\ \hline
+    R08 & Não entrega de atividades no prazo & Planejamento falho & Atraso no andamento do projeto \\ \hline
+    R09 & Escopo muito grande para o prazo ou orçamento & Pedido ou inexperiência dos integrantes & Estouro de custo e não entrega completa do projeto \\ \hline
+    R10 & Inadimplência de algum integrante & Falta de dinheiro & Maior gastos a outros membros \\ \hline
+    R11 & Escolha inadequada de componentes /equipamentos & Descuido do responsável pela atividade & Atraso e aumento no custo \\ \hline
+    R12 & Mal dimensionamento do consumo elétrico & Descuido do responsável pela atividade & Retrabalho \\ \hline
+    R13 & Extravio ou danificação de materiais no galpão & Descuido do responsável pela atividade & Aumento no custo e tempo do projeto \\ \hline
+    R14 & Indisponibilidade de equipamentos no galpão & Outro grupo já tomou posse ou esta estragado & Aumento no custo \\ \hline
+    R15 & Falta de internet no dia da apresentação & Falha da internet do campus & Ter celulares preparados para rotear \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+\subsection{Análise e Respostas aos Riscos}
+\begin{table}[!htp]
+    \centering
+    \caption{Análise dos Riscos}
+    \label{my-label}
+    \begin{tabular}{|p{0.10\linewidth}|p{0.18\linewidth}|p{0.15\linewidth}|p{0.10\linewidth}|p{0.15\linewidth}|p{0.18\linewidth}|}
+    \hline
+    \textbf{ID} & \textbf{Probabilidade} & \textbf{Impacto em nível} & \textbf{P x I} & \textbf{Prioridade} & \textbf{Ação} \\ \hline
+    R01 & Queima de equipamento por descarga elétrica & Baixo & 0.06 & Alerta & Controlar - Manter a atenção ao ligar todos os equipamentos \\ \hline
+    R02 & Atraso na entrega de material & Alto & 0.32 & Crítico & Mitigar - Procurar todos os componentes dentro de brasília e os que não houverem, pedir bem antes e deixar mais um fornecedor a pronta entrega \\ \hline
+    R03 & Erro de dimensionamento dos subsistemas & Alto & 0.32 & Crítico & Mitigar - Procura de professores e apresentação prévia dos dimensionamentos realizados a todo o time de estrutura \\ \hline
+    R04 & Falha de integração entre o app e a máquina & Alto & 0.24 & Crítico & Mitigar - Plano de estudo prévio e boa relação entre os integrantes de software e eletrônica \\ \hline
+    R05 & Falha de integração dos subsistemas da máquina & Catastrófico & 0.80 & Crítico & Mitigar - Manter trabalho de subsistemas atualizados entre si e iniciar a integração logo que puder \\ \hline
+    R06 & Material com defeito & Baixo & 0.06 & Alerta & Controlar - Evitar comprar material de fora de brasília para ter a possibilidade de teste na hora da compra e deixar mais um fornecedor a pronta entrega \\ \hline
+    R07 & Integrante se ausenta da disciplina & Moderado & 0.08 & Alerta & Controlar - Manter constante comunicação entre os integrantes \\ \hline
+    R08 & Não entrega de atividades no prazo & Catastrófico & 0.32 & Crítico & Mitigar - Seguir planejamento e rigorisidade em datas \\ \hline
+    R09 & Escopo muito grande para o prazo ou orçamento & Alto & 0.32 & Crítico & Mitigar - Avaliar sempre alternativas de equipamentos e componentes mais baratos e dialogar formalmente e bem com os professores \\ \hline
+    R10 & Inadimplência de algum integrante & Moderado & 0.12 & Alerta & Controlar - Conversar previamente com todos sobre situação financeira e anotações plenas de todos as entradas e saídas do caixa de forma a deixar explícito a contribuição para os professores \\ \hline
+    R11 & Escolha inadequada de componentes /equipamentos & Alto & 0.16 & Alerta & Controlar - Reunião de avaliação sobre cada componente \\ \hline
+    R12 & Mal dimensionamento do consumo elétrico & Alto & 0.24 & Crítico & Mitigar - Empenho do responsável e procura de professores \\ \hline
+    R13 & Extravio ou danificação de materiais no galpão & Catastrófico & 0.48 & Crítico & Mitigar - Manter histórico de atividades feitas no galpão e fotos da máquina todos os dias de trabalho \\ \hline
+    R14 & Indisponibilidade de equipamentos no galpão & Moderado & 0.20 & Crítico & Mitigar - Procurar locais que possam ter o equipamento para,aluguel ou uso gratuito \\ \hline
+    R15 & Falta de internet no dia da apresentação & Insignificante & 0.05 & Alerta & Controlar - Membros rotearem no celular \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+\subsection{Checklist}
+\begin{table}[!htp]
+    \centering
+    \caption{Checklist}
+    \label{my-label}
+    \begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.25\linewidth}|p{0.15\linewidth}|}
+    \hline
+    \textbf{Risco} & \textbf{Situação} & \textbf{Resposta} & \textbf{Resultado} \\ \hline
+    R03 & Identificando & Mitigar - Procura de professores e apresentação prévia dos dimensionamentos realizados a todo o time de estrutura & Em andamento \\ \hline
+    R04 & Identificando & Mitigar - Plano de estudo prévio e boa relação entre os integrantes de software e eletrônica & Em andamento \\ \hline
+    R05 & Identificando & Mitigar - Manter trabalho de subsistemas atualizados entre si com reuniões presenciais semanais e iniciar a integração logo que puder & Prevenindo \\ \hline
+    R06 & Identificando & Controlar - Evitar comprar material de fora de brasília para ter a possibilidade de teste na hora da compra e deixar mais um fornecedor a pronta entrega & Controlando \\ \hline
+    R14 & Identificando & Mitigar - Procurar locais que possam ter o equipamento para,aluguel ou uso gratuito & Em andamento \\ \hline
+    R15 & Identificando & Controlar - Membros rotearem no celular & Controlando \\ \hline
+    \end{tabular}
+\end{table}
+
+\end{apendicesenv}
