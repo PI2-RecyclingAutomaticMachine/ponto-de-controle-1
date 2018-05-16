@@ -778,4 +778,180 @@ A aplicação obriga-se a mostrar as informações relativas ao perfil acessado.
 Não haverá exposição pública de qualquer dado pessoal, exclusivo o nome do usuário.
 
 Todos os dados referentes as garrafas, descontos e usuários serão arquivados no banco de dados do grupo de desenvolvedores, onde será de inteira responsabilidade destes e da empresa a não divulgação.
+
+\chapter{Documento de Arquitetura}
+\subsection{Introdução}
+Passada a elicitação de requisitos, é necessário a especificação da arquitetura do software a ser desenvolvido, implicando em uma otimização do entendimento por parte dos desenvolvedores sobre os requisitos e principalmente sobre a estrutura.
+
+\subsection{Escopo}
+O software a ser projetado tem como conceito a automatização da gerência de bonificações das pessoas que utilizam a máquina automática de reciclagem. A arquitetura escolhida deve ser baseada na ideia da relação de um cliente, sua interface de uso, uma camada da gerência das requisições de dados, no caso, pode ser uma API/Servidor e o Banco de Dados.
+
+\subsection{Visão Geral}
+O documento segue a seguinte estrutura:
+
+\begin{itemize}
+    \item Introdução
+    \item Representação Arquitetural
+    \item Metas e Restrições da Arquitetura
+    \item Visão de Casos de Uso
+    \item Visão Lógica
+    \item Visão de Implementação
+\end{itemize}
+
+\subsection{Definições e Acrônimos}
+\begin{itemize}
+    \item \textbf{UC:} Introdução
+    \item \textbf{MVVM:} Representação Arquitetural
+\end{itemize}
+
+\subsection{Representação Arquitetural}
+
+\subsubsection{Visão Geral}
+De forma geral, o padrão de arquitetura é a Arquitetura em N Camadas baseada na Arquitetura Cliente Servidor, mais precisamente, no caso serão 3 camadas, camada de apresentação, aplicação(API) e dados. Por cima deste padrão será aplicado o estilo arquitetural REST. Esse conjunto de padrão abrangem de forma completa os requisitos macros de estrutura do projeto.
+
+As tecnologias escolhidas para rodarem em cima deste modelo, foram o Vue JS que fornece suporte para o uso das linguagens padronizadas para desenvolvimento front-end, são
+elas, JavaScript, HTML5 e CSS3, o Quasar que é um framework Vue de desenvolvimento front-end e fornece recursos para desenvolvimentos de aplicações web e mobile(IOS e Android), o Node JS para fazer o papel de servidor das regras de negócio e o Banco de Dados RethinkDB, banco não relacional que fará o papel de servidor de dados.
+
+É interessante colocar em pauta que as tecnologias de front-end já citadas se encaixam bem nas restrições e requisitos não-funcionais do projeto, além de terem sido escolhidas pela experiência do time. Suas justificativas técnicas estão elucidadas nos próximos tópicos.
+
+Em relação a visão de caso de uso e lógica, o Vue possui um padrão de desenvolvimento chamado Model View ViewModel (MVVM) que tem uma ideia arquitetural geral parecida com o N Camadas que é de separar a parte Visão do projeto das Regras de Negócio, onde essa estrutura tem uma descrição bem interessante sobre a visão de processo arquitetural do projeto.
+
+Já na visão de implantação, a comunicação com o hardware do projeto será possível utilizando da camada central da arquitetura, a API, sendo este ponto explicado em tópicos posteriores, mas de modo geral a camada central e a camada de dados serão responsáveis pela comunicação completa do software e do hardware.
+
+\subsubsection{Descrição e Representação Técnica}
+Segundo o arquiteto Christopher Alexanderv \cite{livroPadroesArq}, cada padrão é formado por três regras, a sua relação com o contexto, com o problema e com a solução, sendo assim, é interessante descrever esses três tópicos para o melhor entendimento da escolha arquitetural. O software a ser desenvolvido possui restrições e características que podem ser problemáticas em seu desenvolvimento, o sistema possui interação constante de assuntos de baixo nível com os de alto nível, onde a parte de baixo de nível estará em constante comunicação com o hardware e parte de alto nível estará sempre em contato com o usuário. Como haverá essa alta interação entre os níveis, haverá fluxo constante de pedidos entre os níveis e do hardware. O suporte para comunicação deverá ser aberto para diversos e diferentes periféricos, como exemplo a rapsberry PI, isto também se torna um problema em pontos de reutilização, coesão e pouco acoplamento.
+
+Então, segundo o livro de Wiley\cite{livroPadroesArq} e estudo postado pela UFCG\cite{nCamadas}, estes são problemas que vieram a ser solucionados com o uso do padrão arquitetural em Camadas, onde a solução para estes problemas está em dividir o sistema justamente em camadas e partições, onde uma camada é subsistema que agrega valor ao sistema e partições são subsistemas paralelos a outros subsistemas \cite{nCamadas}. Para solucionar o problema de comunicação a diferentes periféricos, foi-se adotado o padrão Cliente Servidor usando o estilo arquitetural REST, onde este padrão pode ser descrito como uma estrutura em Camadas abrangendo a diferentes protocolos e formas de comunicação sem perder a coesão e reutilização por conta das requisições HTTP universais.
+
+A quantidade de camadas é definida baseada na necessidade de serviços a serem disponibilizados, no caso deste projeto, sabe-se que haverá os serviços disponibilizados pelo aplicativo, os serviços disponibilizados referentes à aplicação que de forma geral é a interface de acesso aos dados do sistema e os serviços de dados. A partir disso é evidente que em questão serão 3 camadas como segue a representação abaixo.
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{figuras/software/3-estrutura-camadas.png}
+	\caption{Estrutura em Camadas}
+\end{figure}
+
+\subsection{Visão de Caso de Uso}
+\begin{table}[htp]
+    \centering
+    \caption{Relação da arquitetura com casos de uso}
+    \label{my-label}
+    \begin{tabular}{|p{0.40\linewidth}|p{0.60\linewidth}|}
+        \hline
+        \multicolumn{1}{|c|}{\textbf{UC}} & \multicolumn{1}{c|}{\textbf{Descrição na Arquitetura}} \\ \hline
+        Visualizar pontuação    & Cliente acessa a camada de apresentação e o sistema faz a requisição dos dados por meio da API. Em caso de incremento de pontos, esse incremento deve ocorrer em tempo real \\ \hline
+        Visualizar garrafa validada    & Cliente acessa a camada de apresentação e o sistema faz a requisição dos dados por meio da API esperando a resposta da máquina. Essa resposta é apresentada em tempo real ao usuário \\ \hline
+        Visualizar histórico de operações    & Cliente acessa a camada de apresentação e o sistema faz a requisição dos dados por meio da API \\ \hline
+        Editar Perfil    & Cliente acessa a camada de apresentação e ele mesmo faz uma requisição de atualização no banco por meio da API \\ \hline
+        Gerar QR-Code    & O aplicativo gera o QR-Code por meio do cpf \\ \hline
+        Gerenciar Operações    & O sistema gere as operações por meio das requisições REST \\ \hline
+        Gerenciar Login    & Atividade envolve requisição de salvamento de usuário por meio de nova inserção ou atualização. O sistema mantém a sessão do usuário. \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Visão Lógica}
+Tendo em vista sua flexibilidade, comunidade bem estabelecida (o que permite maior suporte ao desenvolver) e reatividade, foi escolhido o framework Vue.js para o desenvolvimento da aplicação que será utilizada pelo usuário. Como esta aplicação deve também contemplar o escopo de um aplicativo mobile, optou-se por utilizar o Quasar, o qual é um framework para Vue.js que permite o desenvolvimento de aplicações mobile, além de oferecer uma biblioteca de componentes prontos, que facilitam na hora do desenvolvimento.
+
+Para desenvolvimento da API, escolheu-se o Node.js devido a sua facilidade de desenvolver aplicações em tempo real por meio de websockets. Já para os websockets, optou-se por utilizar o Socket.io, por se tratar de uma das maiores bibliotecas de comunicação em tempo real dentro do ambiente do Node.js. Já para o Banco de Dados, optou-se por utilizar o RethinkDB, pois o mesmo é não relacional, o que facilita sua integração com o Node.js, porém, ele possui algumas das vantagens dos bancos relacionais, como a relação entre duas entidades, algo que será necessário no projeto, vide o diagrama de classes abaixo.
+
+Apesar de não possuir nenhuma tecnologia com o cunho orientado a objetos, elaborou-se um diagrama de classes para elucidar como será a relação entre as entidades do sistema.
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{figuras/software/4-diagrama-de-classes.png}
+	\caption{Diagrama de Classes}
+\end{figure}
+
+As entidade são Usuário, Garrafa e Operação. A entidade Usuário se trata daquele que usará o aplicativo e se identificará por meio de um QR Code. A Garrafa se trata das garrafas que vão ser pré cadastradas no sistema e que serão identificadas também através de um QR Code. A Operação consta na inserção de garrafas na máquina, a qual será a fonte dos pontos do usuário. A Operação por sua vez apresenta uma relação de composição com Usuário e com Garrafa, de modo que ela não existe sem as duas entidades, mas as duas entidades não são dependentes de sua existência. Vale ressaltar que uma Operação pode ser compostas de várias garrafas, porém estará atrelada a um único usuário.
+
+\subsection{Visão de implementação}
+
+\subsubsection{App}
+Por se tratar de um projeto baseado no framework Vue.js, a arquitetura do sistema será construída com base na arquitetura proposta pelo framework. Apesar de não ser estritamente baseado no MVVM (detalhada no subsistema de software na seção de planejamento), a arquitetura do Vue foi desenhada de acordo com esse modelo arquitetural. Dito isso, esse modelo funcionará da seguinte forma:
+
+\subsubsection{View}
+A camada da view possui uma arquitetura baseada em componentes, onde um componente pode ser definido como uma instância reusável do Vue, uma fração de uma interface completa. Tudo que o usuário vê é, necessariamente, um componente. Os componentes são independentes entre si, apesar de coexistirem, cada um no seu próprio espaço, com seus próprios métodos, suas próprias chamadas de API, sua própria estrutura. A independência dos componentes permite também sua reusabilidade, implementando assim o princípio DRY (don't repeat yourself) de desenvolvimento, o que facilita futuras manutenções.
+
+Diferentemente da arquitetura MVC (Model-View-Component) que separa as camadas da aplicação de maneira horizontal, a arquitetura baseada em componentes separa o as camadas do sistema (no caso desse projeto, da View) de maneira vertical. Em outras palavras, enquanto no MVC existe uma camada responsável apenas por mostrar os dados e outra que recupera os dados a serem mostrados, na arquitetura baseada em componentes tudo isso acontece no mesmo nível arquitetural (geralmente a View), e, como já mencionado, as informações respectivas a um componente estão definidas na instância daquele componente. 
+
+Para melhor elucidação da arquitetura descrita, considere o seguinte exemplo de uma aplicação cujo o escopo é uma lista de afazeres, onde a lista possui itens que podem ser excluídos ou editados e um footer com ações de cunho global e outras informações. A estrutura dessa aplicação na arquitetura baseada e componentes seria a seguinte:
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{figuras/software/5-arquitetura-todo.png}
+	\caption{Arquitetura TODO}
+\end{figure}
+
+Onde cada um desses elementos é um componente. O TodoList é o componente onde todos os outros componentes serão adicionados. O TodoItem é um componente que será reusado para cada item da lista de afazeres, de forma que cada TodoItem possuíra um componente DeleteTodoButton e EditTodoButton, que terá a função de excluir e editar um item, respectivamente. Por fim, a TodoList possuirá ainda um componente TodoFooter, o qual possuirá os componentes ClearTodosButton, responsável por limpar todos os afazeres e TodoListStatistics, responsável por mostrar estatísticas dos afazeres (quantos já foram concluídos, por exemplo).
+
+Os componentes foram arquitetados é da seguinte forma:
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{figuras/software/6-arquitetura-componentes-projeto.png}
+	\caption{Arquitetura em Componente}
+\end{figure}
+
+Haverá um componente layout diferente que irá agrupa um conjunto de páginas. Para cada página, haverá um componente page, que pode ou não conter subcomponentes específicos à sua implementação. Além disso, haverá uma série de componentes que poderão ser reutilizados por vários outros componentes. Esse padrão foi adotado com base na escolha do framework Quasar, tendo em vista que é o padrão sugerido pelo mesmo e que permite melhor
+desfrutar de suas utilidades.\cite{arquiteturaCompView} \cite{estruturaQuasar}
+ 
+\subsubsection{Model}
+O papel de model é exercido pela store da aplicação. A store nada mais é do que um padrão de gerenciamento de estado para a aplicação de um modo geral, sendo consultado e manipulado pela camada da View. Ele serve como uma centralização de uma biblioteca para todos os componentes em uma aplicação, com regras que garantem que o estado só possa ser mutado de forma previsível. A store, por sua vez, é implementada do Vue através do Vuex.
+
+A arquitetura do Vuex é uma arquitetura baseada em módulos, onde um módulo representa, de um modo geral, uma entidade do sistema.
+
+Segue um diagrama que representa a arquitetura da store:
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/software/7-vuex.png}
+	\caption{Vuex}
+\end{figure}
+
+O estado, que consiste em um objeto Javascript, é armazenado no State, o qual é acessado pelo componente através de um Getter, que é uma função cujo único propósito é retornar um valor desejado do estado armazenado no State. O componente, caso deseje consultar uma API externa ou alterar o estado contido no State, deve chamar uma Action, que nada mais é do que um método. A Action por sua vez chamará a API caso necessário e, se for o caso, alterar o estado através de uma Mutation. Da mesma forma que um Getter possui um objetivo único, uma Mutation também segue esse padrão; no entanto, o objetivo da Mutation é apenas alterar um valor específico do State. 
+
+Essa arquitetura se mantém para todo módulo da store. \cite{vuex}
+
+\subsubsection{ViewModel}
+A camada da ViewModel funciona como um intermediário entre a camada da View e a camada da Model. No Vue.js, quem faz esse papel de intermediário é a instância global Vue instanciada sempre no começo do projeto. Ao se criar tal instância, é passado um objeto de configuração que determina o seu comportamento.
+
+Como este projeto faz uso do framework Quasar, não há a criação da instância em si, há apenas o objeto de configuração e o framework se encarrega de criar a instância com a composição desejada.\cite{vuejs}
+
+\subsection{API}
+A API, por se tratar de um projeto Node.js permite que a arquitetura seja moldada de acordo com a solução e não com base na tecnologia \cite{nodejs}, e por ser uma aplicação mais simples, possui uma arquitetura mais simples do que a arquitetura do Vue descrita acima. 
+
+Apesar da simplicidade, essa camada de interface necessita comunicar com o banco de dados, recuperar e gravar informações e disponibilizar o resultado dessa recuperação através de algum protocolo de comunicação. 
+
+Tendo essas assertivas em mentes, optou-se pela utilização do modelo arquitetural de N-Camadas, sendo que no caso deste projeto, haverá apenas duas camadas, a camada de Model e a camada de API.
+
+A camada da Model terá a função de se comunicar diretamente com o banco de dados, definindo os atributos e regras de negócio de cada entidade do sistema.
+
+A camada da API por sua vez será responsável por requisitar a Model sempre que for necessário escrever ou ler informações no banco de dados. Além disso, a camada de API deve oferecer uma forma de comunicação para aplicações externas, devendo essa comunicação ser exercida através do protocolo HTTP.
+
+O diagrama a seguir permite visualizar a arquitetura descrita.
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/software/8-api-arquitetura.png}
+	\caption{Arquitetura da API}
+\end{figure}
+
+Além disso, a camada de API deverá respeitar o padrão REST quando possível, que consiste no reuso de URL endereçáveis, mudando-se o método utilizado na requisição. Quando não for possível respeitar o padrão REST, deve-se utilizar o protocolo RPC, que consiste em requisições que não necessariamente consistem no reuso de uma URL endereçavel.
+
+\subsection{Visão de implantação}
+A implantação do sistema será feita de acordo com o seguinte diagrama
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.4]{figuras/software/9-implantacao.png}
+	\caption{Implantação}
+\end{figure}
+
+A API, a qual diz respeito à aplicação em Node.js com a comunicação em tempo real feita pelo Socket.io, juntamente com o banco de dados, em RethinkDB, estarão disponíveis para acesso na nuvem por meio da plataforma do Google Cloud. A plataforma fará essa disponibilização através de uma imagem do Docker. A escolha do Docker foi feita para que a implantação da API independesse do serviço de nuvem utilizado. Desta forma, o Google Cloud pode ser facilmente substituído pela AWS, Microsoft Azure ou Digital Ocean, por exemplo. Sendo assim a escolha do Google Cloud foi feita apenas com base no seu período de uso gratuito sem a necessidade de vincular nenhum tipo de cartão de crédito.
+
+O aplicativo do cliente por sua vez rodará em um celular através do Cordova. Funciona da seguinte maneira: o Quasar gera uma série de arquivos estáticos (HTML, CSS e Javascript) com base no código após desenvolvida a aplicação utilizando-se do Vue e até mesmo de componentes do próprio Quasar. O Cordova se utiliza desses arquivos estáticos para gerar uma aplicação mobile, que nada mais é do que um servidor que serve os arquivos gerados peloQuasar. Essa aplicação gerada pelo cordova se comunicará com a API na nuvem através de requisições HTTP.
+
+Por fim, a placa Raspberry Pi que estará presente na máquina também se comunicará com
+o servidor através de requisições HTTP.
+
 \end{apendicesenv}
