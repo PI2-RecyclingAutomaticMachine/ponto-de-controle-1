@@ -4,7 +4,11 @@ O sistema eletrônico do projeto em questão estará presente nos subsistemas de
 \section{Direcionamento das Garrafas}
 Para realizar o controle do direcionamento das garrafas foi feita uma modelagem através de máquina de estados, que facilita o entendimento do funcionamento sistema. Como é possível visualizar na imagem a seguir.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.4]{figuras/eletronica/1-Maquina-de-estados.png}
+	\caption{Máquina de estados de direcionamento das garrafas.}
+\end{figure}
 
 Primeiramente, no subsistema de separação de garrafas, existirá a etapa de reconhecimento do usuário através do QR code, onde o usuário fará o cadastro em um aplicativo (o desenvolvimento do aplicativo foi feito pela equipe de Engenheiros de Software), esse aplicativo por sua vez irá gerar um QR code que será lido pela máquina, então a máquina identifica o usuário. 
 
@@ -69,11 +73,15 @@ Sendo assim, um sistema de alimentação DC de 50 W com saídas de 5 e 12 V deve
 
 A arquitetura do sistema de direcionamento de garrafas pode ser observada na imagem a seguir.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/2-Arquitetura-do-direcionamento.png}
+	\caption{Arquitetura do direcionamento de garrafas.}
+\end{figure}
 
 \subsection{Microprocessaodor}
 
-O microprocessador utilizado foi a Raspberry PI 3, B, que possui um processador Quad Core de 1.2 GHz da Broadcom modelo BCM2837 de 64 bit, 1 GB de memória RAM, 4 portas USB, 1 saída HDMI, wireless LAN e Bluetooth, conector para display touchscreen e 40 pinos, dentre esses pinos temos entradas e saída digitais, interface I2C, interface SPI, interface UART e interface ID EEPROM, esses pinos podem ser programados de acordo com a necessidade de projeto. (RASPBERRYPI. Raspberry PI 3 Model B. 2017. Disponível em: <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>. Acesso em: 01.11.2017.).
+O microprocessador utilizado foi a Raspberry PI 3, B, que possui um processador Quad Core de 1.2 GHz da Broadcom modelo BCM2837 de 64 bit, 1 GB de memória RAM, 4 portas USB, 1 saída HDMI, wireless LAN e Bluetooth, conector para display touchscreen e 40 pinos, dentre esses pinos temos entradas e saída digitais, interface I2C, interface SPI, interface UART e interface ID EEPROM, esses pinos podem ser programados de acordo com a necessidade de projeto. \cite{raspberryPi}
 
 A sua escolha para o projeto se deu pelos seguintes motivos:
 
@@ -87,40 +95,68 @@ A sua escolha para o projeto se deu pelos seguintes motivos:
 
 Assim, a Raspberry Pi 3 será o centro da arquitetura de automação e controle do subsistema de eletrônica, conforme indicado pela figura {\color{red} Arquitetura do direcionamento de garrafas} acima.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/3-Raspberry-PI.jpg}
+	\caption{Raspberry PI 3 modelo B.}
+\end{figure}
 
 \subsection{Display LCD}
 Está sendo utilizado um display LCD 16x2 para exibir mensagens para o usuário, o mesmo foi escolhido pelo fato de um integrante do grupo já possuir um, ele se comunica com o microprocessador através do barramento I2C. Caso houvesse uma melhor condição econômica poderia ser escolhido um display melhor, como por exemplo um display em LCD de 9”, para que houvesse uma melhor interação entre a máquina e usuário. Mas como esta máquina é um protótipo, onde o importante é demonstrar o conceito de funcionamento do mesmo, o grupo optou por economizar recursos financeiros neste quesito.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/4-Display-LCD.jpg}
+	\caption{Display LCD 16x2 utilizado no projeto.}
+\end{figure}
 
 \subsection{Motor de passo e driver}
 O motor de passo escolhido foi o NEMA 17 com 3 Kgf/cm de torque, o mesmo foi escolhido devido ao fato de um integrante do grupo já possuir um, gerando economia financeira em relação ao orçamento do protótipo.
 
-O motor de passo, é controlado pelo ativamento das bobinas, ou seja, tais motores não possuem escovas ou comutadores, apenas as bobinas que são polarizadas no sentido e no tempo certo para que haja um passo. O número de passos que é necessário para uma revolução é determinado pelo número de pólos que, dependendo, pode ser um imã ou um eletroímã em seu eixo, com eletroímãs em suas paredes. A velocidade de rotação e sentido são determinados pela forma como as bobinas são acionadas (KALATEC, 2016). KALATEC. Motor de passo: Tudo que você precisa saber. 2016. Disponível em: <http://www.kalatec.com.br/motoresdepasso/motor-de-passo>.
+O motor de passo, é controlado pelo ativamento das bobinas, ou seja, tais motores não possuem escovas ou comutadores, apenas as bobinas que são polarizadas no sentido e no tempo certo para que haja um passo. O número de passos que é necessário para uma revolução é determinado pelo número de pólos que, dependendo, pode ser um imã ou um eletroímã em seu eixo, com eletroímãs em suas paredes. A velocidade de rotação e sentido são determinados pela forma como as bobinas são acionadas \cite{kalatec}.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/5-Motor-de-passo.jpg}
+	\caption{Motor de passo NEMA 17 com 3 Kgfcm de torque, utilizado no projeto.}
+\end{figure}
 
 Para alimentar o motor de passo foi utilizada uma ponte H dupla, para isso foi utilizado o circuito integrado L298N, sua escolha foi devido ao preço e disponibilidade, já que o mesmo é encontrado facilmente nas lojas locais. Como o driver de corrente L298N é apenas uma ponte H dupla, toda a lógica de funcionamento do motor de passo foi feita na Raspberry Pi, assim como seu controle de velocidade, sentido de rotação e número de passos. 
 
 Uma ponte H é formada basicamente por quatro transistores que permitem levar duas saídas para nível lógico alto ou baixo, com uma ponte H dupla como a que foi utilizada é possível controlar quatro saídas, sendo que no caso do L298N cada saída pode fornecer uma tensão de até 46 V e corrente de até 2 A suportando picos de corrente de até 3 A, como nosso motor de passo está sendo alimentado com 12 V e possui corrente nominal de 1,7 A, a ponte H dupla escolhida se enquadra nas especificações. 
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.9]{figuras/eletronica/6-Diagrama-de-blocos-ponte-H.jpg}
+	\caption{Diagrama de blocos da ponte H dupla (L298N) utilizada no projeto.}
+\end{figure}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/7-Ponte-H-dupla.jpg}
+	\caption{Ponte H dupla L298N, utilizada no projeto.}
+\end{figure}
 
 \subsection{Sensor capacitivo}
-São sensores capazes de detectar a aproximação de objetos sem a necessidade de contato físico, com princípio de funcionamento baseado na variação da capacitância. O sensor capacitivo é basicamente um capacitor de placas paralelas, onde o dielétrico é o material que se encontra na face do sensor, dessa forma, com a alteração do material dielétrico existe alteração na capacitância. (http://s2i.das.ufsc.br/seminarios/apresentacoes/tecnicas-sensoreamento.pdf)
+São sensores capazes de detectar a aproximação de objetos sem a necessidade de contato físico, com princípio de funcionamento baseado na variação da capacitância. O sensor capacitivo é basicamente um capacitor de placas paralelas, onde o dielétrico é o material que se encontra na face do sensor, dessa forma, com a alteração do material dielétrico existe alteração na capacitância.\cite{tecnicasSensoriamento}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.7]{figuras/eletronica/8-Funcionamento-sensor-capacitivo.jpg}
+	\caption{Funcionamento do sensor capacitivo.}
+\end{figure}
 
-Funcionamento do sensor capacitivo. Fonte: (http://profcolassante.blogspot.com.br/2015/06/sensores-capacitivos-e-indutivos.html).
+Funcionamento do sensor capacitivo. Fonte: \cite{sensorCapacitivoImagem}.
 
-Composto por um capacitor de placas paralelas, o sensor capacitivo se baseia no princípio de mudança de frequência de oscilação de um circuito ressonante com a alteração do valor da capacitância, que por sua vez é causada pela mudança de dielétrico. A alteração de frequência é enviada a um circuito detector que transforma a variação de frequência em nível de tensão, um circuito trigger recebe esse sinal de tensão e o transforma em uma onda quadrada, que por sua vez é utilizada para excitar um circuito de potência, gerando um sinal digital de saída. (http://www.mecaweb.com.br/eletronica/content/e-sensor-capacitivo)
+Composto por um capacitor de placas paralelas, o sensor capacitivo se baseia no princípio de mudança de frequência de oscilação de um circuito ressonante com a alteração do valor da capacitância, que por sua vez é causada pela mudança de dielétrico. A alteração de frequência é enviada a um circuito detector que transforma a variação de frequência em nível de tensão, um circuito trigger recebe esse sinal de tensão e o transforma em uma onda quadrada, que por sua vez é utilizada para excitar um circuito de potência, gerando um sinal digital de saída. \cite{sensorCapacitivo}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.7]{figuras/eletronica/9-Partes-internas-sensor-capacitivo.jpg}
+	\caption{Partes internas do sensor capacitivo.}
+\end{figure}
 
-Esse conjunto eletrônico que forma o sensor capacitivo é montado utilizando técnicas avançadas, sendo o conjunto alojado em invólucros metálicos com resina de alta densidade, formando um bloco sólido à prova d’água e vibrações. (http://www.mecaweb.com.br/eletronica/content/e-sensor-capacitivo)
+Esse conjunto eletrônico que forma o sensor capacitivo é montado utilizando técnicas avançadas, sendo o conjunto alojado em invólucros metálicos com resina de alta densidade, formando um bloco sólido à prova d’água e vibrações. \cite{sensorCapacitivo}
 
 O valor da capacitância de um capacitor de placas paralelas pode ser calculada através da equação a seguir, onde A é a área das placas, d é a distância entre as placas e epsilon é o valor da constante dielétrica. Como no caso do sensor capacitivo tanto A quanto d são constantes, a variação da capacitância será relacionada apenas com a variação do dielétrico.
 
@@ -132,53 +168,89 @@ O controle de qual dielétrico irá excitar a saída digital do sensor capacitiv
 
 O sensor capacitivo escolhido foi o Ljc18a3-b-z/by Npn, o mesmo foi escolhido devido ao seu preço e disponibilidade, já que o mesmo foi encontrado em uma loja local. Este sensor é utilizado para detectar o material da garrafa que for inserida na máquina. O sensor funciona numa faixa de tensão de 6 até 36 V e possui uma saída digital que indica a presença de determinado material.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/10-Sensor-capacitivo.jpg}
+	\caption{Sensor capacitivo Ljc18a3-b-zby Npn.}
+\end{figure}
 
 \subsection{Célula de Carga}
-A célula de carga escolhida foi do tipo SPL (single point) da marca IWM (International Weighing Manufacture) com capacidade máxima de 10 Kg, a mesma foi escolhida devido ao fato de um integrante do grupo já possuir uma. A sensibilidade desta célula de carga depende da tensão de excitação da célula, que é limitada entre a tensão recomendada (entre 6V e 10V) e a tensão máxima (15V), com a sensibilidade de 2mV/V. \cite (http://www.iwm-brasil.com.br/spl-celula-de-carga-tipo-single-point/).
+A célula de carga escolhida foi do tipo SPL (single point) da marca IWM (International Weighing Manufacture) com capacidade máxima de 10 Kg, a mesma foi escolhida devido ao fato de um integrante do grupo já possuir uma. A sensibilidade desta célula de carga depende da tensão de excitação da célula, que é limitada entre a tensão recomendada (entre 6V e 10V) e a tensão máxima (15V), com a sensibilidade de 2mV/V. \cite{celulaCarga}.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{figuras/eletronica/11-Celula-de-carga.jpg}
+	\caption{Célula de carga utilizada no projeto.}
+\end{figure}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.9]{figuras/eletronica/12-Informacoes-celula-carga.jpg}
+	\caption{Informações da célula de carga.}
+\end{figure}
 
 Essa célula de carga possui dois extensômetros posicionados nas duas faces, superior e inferior. Para seu correto funcionamento um lado é fixado na estrutura e o outro lado é onde o esforço será aplicado, existe uma seta gravada na célula de carga indicando o sentido do esforço. 
 
-O Extensômetro é um transdutor de deformação em resistência elétrica. Funciona a partir de trilhas de um fio em formato de grade, de maneira que ao se aplicar uma deformação, no sentido perpendicular a grade, o fio é esticado, diminuindo a área de seção transversal do mesmo aumentando assim a resistência, isso é possível observar na equação 2.38, que descreve a resistência em um fio, onde L é a largura do fio, A a área de seção transversal e rho a condutividade do material. (https://www.eecis.udel.edu/~portnoi/academic/academic-files/extensometria.html)
+O Extensômetro é um transdutor de deformação em resistência elétrica. Funciona a partir de trilhas de um fio em formato de grade, de maneira que ao se aplicar uma deformação, no sentido perpendicular a grade, o fio é esticado, diminuindo a área de seção transversal do mesmo aumentando assim a resistência, isso é possível observar na equação 2.38, que descreve a resistência em um fio, onde L é a largura do fio, A a área de seção transversal e rho a condutividade do material. \cite{extensometria}
 
 \begin{equation}
     R = \rho \frac{L}{A}
 \end{equation}
 
-As deformações no fio são relacionadas pelo coeficiente de Poisson, a equação 2 mostra essa relação, tal que o coeficiente de Poisson é igual a deformação lateral dividida pela deformação coaxial do fio. (https://www.eecis.udel.edu/~portnoi/academic/academic-files/extensometria.html)
+As deformações no fio são relacionadas pelo coeficiente de Poisson, a equação 2 mostra essa relação, tal que o coeficiente de Poisson é igual a deformação lateral dividida pela deformação coaxial do fio. \cite{extensometria}
 
 \begin{equation}
     v = \frac{\varepsilon L}{\varepsilon a} (2)
 \end{equation}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/13-Extensometro.jpg}
+	\caption{Extensômetro.}
+\end{figure}
 
-Para medir a variação de resistência é necessário outro transdutor de resistência para algum parâmetro como corrente ou tensão. A ponte de Wheatstone cujo esquemático é apresentado na figura a seguir, consegue relacionar o valor da resistência desconhecida a um valor de tensão, com as outras resistências tendo um valor fixo e preciso. A equação que relaciona as resistências a tensão entre os nós B e C é apresentada a seguir. É possível observar que se apenas uma das resistências for desconhecida o sistema tem apenas ela como variável. (http://www.embarcados.com.br/ponte-de-wheatstone/)
+Para medir a variação de resistência é necessário outro transdutor de resistência para algum parâmetro como corrente ou tensão. A ponte de Wheatstone cujo esquemático é apresentado na figura a seguir, consegue relacionar o valor da resistência desconhecida a um valor de tensão, com as outras resistências tendo um valor fixo e preciso. A equação que relaciona as resistências a tensão entre os nós B e C é apresentada a seguir. É possível observar que se apenas uma das resistências for desconhecida o sistema tem apenas ela como variável. \cite{ponteWheatstone}
 
 \begin{equation}
     VM = V * \frac{(R2R3 - R1R4)}{[(R1+R3)*(R2+R4)]} (3)
 \end{equation}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.8]{figuras/eletronica/14-Circuito-da-Ponte-Wheatstone.jpg}
+	\caption{Circuito da Ponte de Wheatstone.}
+\end{figure}
 
-Para tratar o sinal analógico proveniente da célula de carga está sendo utilizado o módulo HX711, esse módulo foi projetado para funcionar com pontes de winston, e já possui um conversor AD (analógico digital) de 24 bits, funciona com tensão de alimentação entre 2,6 e 5,5 V, a comunicação com o microprocessador é feita através de uma interface serial. \cite (https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711-english.pdf). O módulo HX711 foi escolhido devido a seu preço, disponibilidade e funcionalidade, já que o mesmo foi projetado para funcionar com células de carga e já possui um conversor AD, sendo que a Raspberry PI não possui conversor AD.
+Para tratar o sinal analógico proveniente da célula de carga está sendo utilizado o módulo HX711, esse módulo foi projetado para funcionar com pontes de winston, e já possui um conversor AD (analógico digital) de 24 bits, funciona com tensão de alimentação entre 2,6 e 5,5 V, a comunicação com o microprocessador é feita através de uma interface serial. \cite (interfacePonte). O módulo HX711 foi escolhido devido a seu preço, disponibilidade e funcionalidade, já que o mesmo foi projetado para funcionar com células de carga e já possui um conversor AD, sendo que a Raspberry PI não possui conversor AD.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=1.0]{figuras/eletronica/15-Diagrama-de-blocos-HX711.jpg}
+	\caption{Diagrama de blocos da aplicação do HX711 com célula de carga.}
+\end{figure}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{figuras/eletronica/16-Modulo-HX711.jpg}
+	\caption{Módulo HX711.}
+\end{figure}
 
 \subsection{Sensor infravermelho}
-Este tipo de sensor possui um princípio de funcionamento muito simples, onde um LED emissor de luz infravermelha emite um feixe de luz que ao encontrar algum obstáculo é refletido, a luz refletida é detectada através de um fototransistor, quanto mais próximo ao obstáculo estiver o conjunto emissor/receptor maior será a intensidade do sinal recebido. (https://www.citisystems.com.br/sensores-opticos/)
+Este tipo de sensor possui um princípio de funcionamento muito simples, onde um LED emissor de luz infravermelha emite um feixe de luz que ao encontrar algum obstáculo é refletido, a luz refletida é detectada através de um fototransistor, quanto mais próximo ao obstáculo estiver o conjunto emissor/receptor maior será a intensidade do sinal recebido. \cite{sensoresOpticos}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.7]{figuras/eletronica/17-Principio-de-funcionamento-do-sensor-infravermelho-reflexivo.jpg}
+	\caption{Princípio de funcionamento do sensor infravermelho reflexivo.}
+\end{figure}
 
-Para detectar se os compartimentos estão cheios, se o usuário está com a mão dentro da máquina ou se a garrafa foi mal inserida foi utilizado o sensor de obstáculo infravermelho por reflexão, o mesmo foi escolhido devido a sua funcionalidade, já que a distância de detecção do mesmo pode ser facilmente ajustada através de um potenciômetro, fornecendo uma saída digital que indica a presença de um objeto, apresentando uma solução simples para os problemas a serem solucionados, podendo ser encontrado facilmente em lojas locais a preços acessíveis. O sensor pode funcionar com tensão de alimentação entre 3,3 e 5 V e pode detectar obstáculos a distâncias de 2 até 30 cm, sendo que essa distância pode ser ajustada. \cite (https://www.tdtec.com.br/produto/sensor-de-obstaculo-infravermelho-reflexao-lm393-arduino/413346)
+Para detectar se os compartimentos estão cheios, se o usuário está com a mão dentro da máquina ou se a garrafa foi mal inserida foi utilizado o sensor de obstáculo infravermelho por reflexão, o mesmo foi escolhido devido a sua funcionalidade, já que a distância de detecção do mesmo pode ser facilmente ajustada através de um potenciômetro, fornecendo uma saída digital que indica a presença de um objeto, apresentando uma solução simples para os problemas a serem solucionados, podendo ser encontrado facilmente em lojas locais a preços acessíveis. O sensor pode funcionar com tensão de alimentação entre 3,3 e 5 V e pode detectar obstáculos a distâncias de 2 até 30 cm, sendo que essa distância pode ser ajustada. \cite{sensorReflexivo}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.7]{figuras/eletronica/18-Sensor-de-obstaculo-infravermelho.jpg}
+	\caption{Sensor de obstáculo infravermelho por reflexão utilizado no projeto.}
+\end{figure}
 
 \section{Acionamento do triturador}
 O triturador não precisa ser acionado toda vez que uma garrafa plástica for inserida, como existe um funil, várias garrafas podem se acumular e quando chegar a um determinado nível, o triturador é acionado e tritura todas as garrafas presentes no funil. Dessa forma, foi desenvolvido um sistema de acionamento do triturador totalmente independente do sistema de direcionamento de garrafas, não existindo comunicação entre os sistemas.
@@ -187,15 +259,23 @@ Foi colocado um sensor infravermelho que funciona através de reflexão no topo 
 
 Para acionar o motor e o freio do motor, foram utilizados dois relés com tensão nominal de 250 V (AC) e 10 A, a especificação da corrente e tensão desses relés foi feita pelos membros do grupo pertencentes a Engenharia de Energia. Sendo assim foi comprado um módulo relé que já contém os dois relés necessários para realizar o controle do motor, sendo que este módulo já está equipado com um optoacoplador para evitar que o microcontrolador possa sofrer danos.
 
-Para realizar o controle do acionamento e frenagem do motor foi utilizado o microcontrolador ESP8266, o mesmo foi escolhido pelo fato de um membro do grupo já possuir a placa. O ESP8266 é possui Wi-Fi embutido, Tem onze portas GPIO, barramentos I2C, SPI, UART, conversor AD, saída PWM, processador L106 32-bit que funciona a 80 MHz, 32 KBytes de RAM para instruções, 96 KBytes de RAM para dados, 64 KBytes de ROM para boot, possui uma memória Flash SPI Winbond W25Q40BVNIG de 512 KBytes, é fabricado pela Espressif. \cite(https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex-datasheet-en.pdf)
+Para realizar o controle do acionamento e frenagem do motor foi utilizado o microcontrolador ESP8266, o mesmo foi escolhido pelo fato de um membro do grupo já possuir a placa. O ESP8266 é possui Wi-Fi embutido, Tem onze portas GPIO, barramentos I2C, SPI, UART, conversor AD, saída PWM, processador L106 32-bit que funciona a 80 MHz, 32 KBytes de RAM para instruções, 96 KBytes de RAM para dados, 64 KBytes de ROM para boot, possui uma memória Flash SPI Winbond W25Q40BVNIG de 512 KBytes, é fabricado pela Espressif. \cite{microESP}
 
 Na imagem a seguir é possível visualizar a topologia do sistema de controle do motor, onde o microcontrolador ESP8266 recebe os sinais dos dois sensores infravermelho e aciona os relés para ligar o triturador e frear o motor.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{figuras/eletronica/19-Arquitetura-do-controle-e-acionamento-do-motor.png}
+	\caption{Arquitetura do controle e acionamento do motor.}
+\end{figure}
 
 Para realizar o controle do acionamento e frenagem do motor foi feita uma modelagem através de máquina de estados, que facilita o entendimento do funcionamento sistema. Como é possível visualizar na imagem a seguir.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{figuras/eletronica/20-Maquina-de-estados-do-controle-de-acionamento-e-frenagem-do-triturador.png}
+	\caption{Máquina de estados do controle de acionamento e frenagem do triturador.}
+\end{figure}
 
 Como é possível visualizar na imagem, inicialmente o motor está desligado e o sistema está lendo o sensor infravermelho superior, quando algo é detectado por este sensor é aguardado 3 segundos e o mesmo sensor é verificado novamente, isso é necessário pois quando a garrafa cai dentro do funil ela passa pelo sensor e aciona o mesmo, sendo assim, com essa segunda verificação é possível saber que existe uma garrafa naquele ponto do funil e não que a garrafa apenas passou por ali. 
 
@@ -203,14 +283,30 @@ Posteriormente o triturador é ligado, com o motor ligado o sensor infravermelho
 
 Após o desligamento do motor é acionado o freio do motor por corrente contínua, são aguardados 5 segundos (esse tempo ainda será definido através de testes práticos, a equipe responsável por definir o tempo que o freio ficará acionado é a equipe de Engenheiros de Energia), após esse tempo o freio é desligado e a máquina retorna a seu estado inicial.
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.8]{figuras/eletronica/21-Sensor-de-obstaculo-infravermelho-reflexao-p-deteccao-garrafas-no-funil.jpg}
+	\caption{Sensor de obstáculo infravermelho por reflexão utilizado para detecção de garrafas no funil.}
+\end{figure}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.7]{figuras/eletronica/22-Modulo-rele-de-2-canais.jpg}
+	\caption{Módulo relé de 2 canais (250 V AC 10 A) utilizado para acionamento do triturador e freio do moto.}
+\end{figure}
 
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.7]{figuras/eletronica/23-Microcontrolador-ESP8266.jpg}
+	\caption{Princípio de funcionamento do sensor infravermelho reflexivo.}
+\end{figure}
 
 \section{Integração}
-IMAGEM
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.8]{figuras/eletronica/24-Diagrama-de-integracao.jpg}
+	\caption{Diagrama de integração entre a Engenharia Eletrônica e as demais áreas.}
+\end{figure}
 
 \subsection{Engenharia de Energia}
 É necessário que esta área forneça alimentação DC para o correto funcionamento do sistema eletrônico, como explicado anteriormente, será necessário uma fonte DC de 45 W com saídas de 5 V/2,8 A e 12 V/2 A. Além da especificação dos relés de acionamento do motor e freio, cujas especificações informadas foram para ambos 250 V (AC) 10 A, e do tempo em que o freio deverá permanecer acionado.
