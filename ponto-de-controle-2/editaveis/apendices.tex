@@ -864,6 +864,18 @@ Apesar de não possuir nenhuma tecnologia com o cunho orientado a objetos, elabo
 
 As entidade são Usuário, Garrafa e Operação. A entidade Usuário se trata daquele que usará o aplicativo e se identificará por meio de um QR Code. A Garrafa se trata das garrafas que vão ser pré cadastradas no sistema e que serão identificadas também através de um QR Code. A Operação consta na inserção de garrafas na máquina, a qual será a fonte dos pontos do usuário. A Operação por sua vez apresenta uma relação de composição com Usuário e com Garrafa, de modo que ela não existe sem as duas entidades, mas as duas entidades não são dependentes de sua existência. Vale ressaltar que uma Operação pode ser compostas de várias garrafas, porém estará atrelada a um único usuário.
 
+Diagramas de sequência é uma solução bastante usada de modelagem dinâmica. A modelagem dinâmica foca as interações que ocorrem dentro do sistema. Diagramas de sequência incidem especificamente sobre as “linhas da vida” de um objeto e como elas se comunicam com outros objetos para executar uma função antes do término da linha da vida. Dentro do sistema proposto, temos a representação do usuário, sua conta criada, a lógica de criação de qr code, e as ações representadas pela interação com a máquina. 
+
+Cada figura tem seu tempo de atuação desse linha de vida de acordo com suas atividades e suas ações disponíveis, representados no diagrama pela barra azul. As setas representam o fluxo das ações que se interagem entre si
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.3]{figuras/software/sequencia.jpg}
+	\caption{Diagrama de Classes}
+\end{figure}
+
+Vale ressaltar que dentro da nossa realidade, temos um fluxo cíclico e em real time, que é a inserção das garrafas. A cada ação feita pela máquina, a garrafa é validada e enviada para a camda da conta do usuário, e então os dados são persistidos e as pontuações são feitas
+
 \subsection{Visão de implementação}
 
 \subsubsection{App}
