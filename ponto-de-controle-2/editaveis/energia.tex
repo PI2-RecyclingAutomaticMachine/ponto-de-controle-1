@@ -5,13 +5,21 @@ O subsistema de Energia é responsável pela alimentação da Estação Coletora
 É um componente eletromecânico muito utilizado, devido a sua eficiência e simplicidade. São construídos para suprir a necessidade de movimento de rotação em situações onde é disponibilizada apenas uma única fase de corrente alternada. 
 O motor monofásico, possui estator e rotor como qualquer outro atuador eletromagnético. Entretanto, por se tratar de um componente monofásico possui apenas um conjunto de bobinas, análogo a visão de apenas uma fase de um motor trifásico de indução. O motor monofásico utiliza o bobinamento para um rotor gaiola de esquilo.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.6]{figuras/energia/1.png}
+	\caption{Detalhes de um motor monofásico.}
+\end{figure}
 
 O campo girante do motor monofásico possui certas particularidades como a necessidade de um enrolamento auxiliar para gerá-lo. Para inversão do sentido de giro desse tipo de motor, também é necessário um esquema que possa fazer com que sua partida se dê para outro lado. 
 
 Para este projeto o motor escolhido, foi o de indução monofásico da WEG, que fará a alimentação principal do projeto. Atuando juntamente com o disjuntor para garantir a integridade do motor e de todos o sistema contra eventuais problemas no circuito. 
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.5]{figuras/energia/2.png}
+	\caption{Motor de Indução Monofásico da WEG.}
+\end{figure}
 
 O motor fornecido para a Estação Coletora foi o WEG D56 monofásico. A seguir segue as  as seguintes especificações.
 
@@ -27,7 +35,11 @@ O motor fornecido para a Estação Coletora foi o WEG D56 monofásico. A seguir 
 
 CREDER (2005) define a relação entre potência, conjugado e rotação de um motor elétrico como:
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.9]{figuras/energia/3.png}
+	\caption{Fórmula 1}
+\end{figure}
 
 P = Potência em cv;
 
@@ -37,7 +49,11 @@ N = Rotação em rpm;
 
 Como o motor terá seu eixo acoplado com um redutor de 1:40, a rotação cairá de 1730 para 43,25 rpm.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.9]{figuras/energia/4.png}
+	\caption{Fórmula 2}
+\end{figure}
 
 \subsubsection{Disjuntor}
 
@@ -49,15 +65,27 @@ O disjuntor atuará todas as vezes que houver pico de corrente, sobrecarga e cur
 
 Aplicando em nosso projeto o disjuntor escolhido foi o magnético, pois, possui a mesma função dos disjuntores eletromagnéticos e térmicos que é a proteção dos equipamentos elétricos contra os possíveis curtos-circuitos e as sobrecargas, mas tem uma vantagem quando comparado com os outros, que é a precisão maior para detectar o valor da corrente elétrica visando a segurança do sistema.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.5]{figuras/energia/5.png}
+	\caption{Disjuntor C10-1 Alumbra.}
+\end{figure}
 
 Para a realização do dimensionamento do disjuntor, precisamos saber a corrente de emprego (Ie) do sistema que é dada pela seguinte equação:
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.9]{figuras/energia/6.png}
+	\caption{Fórmula 3}
+\end{figure}
 
 A corrente de partida é definida por:
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.9]{figuras/energia/7.png}
+	\caption{Fórmula 4}
+\end{figure}
 
 Observando os resultados encontrados,as curvas B,C e D e a norma ABNT NBR NM 60898, foi escolhido um disjuntor termomagnético C10, protegendo assim contra curtos circuitos e sobrecargas. Os disjuntores de curva C suportam uma corrente instantânea de 5 a 10 vezes maior que a corrente nominal, sendo suficiente para a corrente de partida do motor em questão. 
 
@@ -77,23 +105,43 @@ A usada nos dois casos, serão as pontes retificadoras compostas por um banco de
 
 A polarização direta acontece quando o pólo positivo da fonte entra em contado com o ânodo do diodo, ou seja, na polarização direta o diodo permite a passagem de corrente elétrica. O diodo permite que apenas a parte positiva da senóide da fonte alternada passe pelo circuito, dessa maneira, convertendo o sinal para contínuo. Da mesma forma ocorre quando o polo negativo da fonte entra em contato com o cátodo do diodo, com a diferença que a parte negativa da senóide é convertida para contínua.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.4]{figuras/energia/8.png}
+	\caption{Polarização Direta.}
+\end{figure}
 
 O diodo funciona como uma chave, após o fornecimento de uma corrente alternada, a chave se comporta de duas maneiras, sendo ela fechada (resistência zero) para uma polaridade da tensão de entrada e como uma chave aberta (resistência infinita) para a polaridade oposta. E como sua função é alterar a corrente, ele faz com que a corrente passe em apenas uma polaridade. O gráfico mostra a tensão de chegada no diodo.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.5]{figuras/energia/9.png}
+	\caption{Tensão de entrada do diodo oscilando entre o positivo e o negativo.}
+\end{figure}
 
 Após passar pelo diodo a tensão passa a ter apenas uma polaridade, como mostra o gráfico 2.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.5]{figuras/energia/10.png}
+	\caption{Tensão de saída do diodo meia onda.}
+\end{figure}
 
 E seguindo a mesma lógica, após passar pela ponte retificadora e por um filtro capacitivo,  a tensão começa a se linearizar.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.5]{figuras/energia/11.png}
+	\caption{Sinal senoidal de saída pós filtro capacitivo}
+\end{figure}
 
 A ponte retificadora do sistema de frenagem trabalhará em tensão 220V. Foi realizada medição da resistência do estator do motor, sendo de 25 ohms. Aplicando a Lei de Ohm temos.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.9]{figuras/energia/12.png}
+	\caption{Fórmula 5}
+\end{figure}
 
 Concluímos então, que a ponte retificadora injetará 8,8 amperes de corrente contínua no motor para a realização da frenagem. Segundo o fabricante, o motor suporta a corrente de rotor bloqueado, ou seja, a corrente de partida (38,5 Amperes), por 6 segundos. Sendo assim, foi escolhida a ponte KBPC1010 para o projeto, suportando tensão de até 1000V e corrente de 10 amperes.
 
@@ -111,7 +159,11 @@ Baseado nessa relação considera-se que o transformador reduz a tensão se o n�
 
 Neste projeto o transformador é  um dos componentes da fonte simétrica responsável por fazer a integração entre o subsistema de energia com o da eletrônica para fazer a alimentação final do sistema.. Para esta fonte o transformador escolhido é um com trafo de 12V+12V e 5A para conseguir fazer a alimentação correta dos equipamentos eletrônicos com potência de 50W.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.6]{figuras/energia/13.png}
+	\caption{Transformador}
+\end{figure}
 
 \subsubsection{Capacitores}
 Capacitores podem apresentar dois comportamentos quando ligados a fontes de tensão em um circuito. Caso o mesmo esteja alimentado por uma fonte de tensão contínua, ele armazenará energia entre suas placas até que sua tensão se iguale a da fonte, após carregado não passará mais corrente pelo capacitor. Diferente acontece quando a fonte fornece uma tensão alternada, nessa situação o capacitor alternará entre momentos onde armazena energia e momentos onde libera energia para o circuito, passando assim corrente pelo componente a todo instante.
@@ -134,7 +186,11 @@ Onde:
 
 A quantidade de energia armazenada, por outro lado é dada por:
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.9]{figuras/energia/14.png}
+	\caption{Fórmula 6}
+\end{figure}
 
 \begin{itemize}
     \item P é a energia armazenada em joules;
@@ -168,7 +224,11 @@ Step down é um dispositivo que permite regular a tensão requerida, é conhecid
 Para correto funcionamento desse dispositivo é necessário observar a diferença de tensão de entrada de 1,5V maior que a de saída. A corrente normal de operação é aproximada de 2,2A, porém o módulo é capaz de reduzir uma carga de até 3A com ótima eficiência.
 Vai atuar em conjunto com transformador, e capacitores na fonte simétrica, tendo a responsabilidade de filtrar a tensão de saída, oferecendo tensões de saídas estabilizadas.. Disponibilizará as tensões de 12V para 2A e de 5V para 2,8A para alimentação dos componentes eletrônicos requeridos.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.5]{figuras/energia/15.png}
+	\caption{Módulo conversor de tensão LM317.}
+\end{figure}
 
 \subsection{Fios}
 Os fios são condutores em formato cilíndrico que permitem passagem de corrente através de um condutor, sendo eles comumente feitos de alumínio ou cobre revestidos de material isolante como borrachas e PVC.
@@ -177,7 +237,11 @@ A seção transversal perpendicular de um fio elétrico deve ser projetado a fim
 
 De acordo com a NBR 5410 que dita as normas para instalações elétricas em baixa tensão há uma padronização de fios de acordo com a quantidade de corrente requerida.
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.7]{figuras/energia/16.png}
+	\caption{Tamanho requerido dos fios.}
+\end{figure}
 
 Aplicando em nosso projeto, consideramos que componente estejam a operar em sua maior capacidade, com suas as correntes máximas atingidas estarão dentro de uma margem confortável (corrente de emprego de 8 A e corrente ponte retificadora de 8,8 A) e considerando a seção mínima definida pela norma para circuitos de força, foi utilizado os condutores de 2,5 mm.
 
@@ -192,12 +256,20 @@ Em um primeiro momento, foi realizada a simulação da possível solução para 
     \item S1: Acionamento Motor 
 \end{itemize}
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.8]{figuras/energia/17.png}
+	\caption{Simulação do circuito de comando e de força}
+\end{figure}
 
 A solução se baseia em utilizar duas contatoras, sendo uma para o acionamento do motor e outra para o acionamento do freio. Quando o selo de K1 for fechado, acionando então o motor, a contatora K2 mantem-se aberta. Ao se abrir K1, K2 é fechado, com isso é injetado corrente contínua no motor para sua frenagem. O tempo de trabalho do freio é controlado por um relé temporizador. 
 
 Por questões de praticidade e custo benefício, a solução apresentada acima não será implementada. O subsistema de energia desenvolveu um código e através do uso de um Arduino  passou a ter um novo comando do acionamento do motor e de sua frenagem. 
 
-IMAGEM
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.4]{figuras/energia/18.png}
+	\caption{Teste com Arduino}
+\end{figure}
 
 O novo comando de acionamento se baseia na substituição de contatoras por relés. Sendo assim, não é mais necessário o uso de relé temporizador, contatos auxiliares, além das próprias contatoras, gerando grande economia. O controle dos relés se dá por meio do arduino, onde um relé será para o acionamento do motor, enquanto o segundo será para acionamento do freio, estando os dois em paralelo. O código foi desenvolvido para assim que o acionamento do motor for interrompido, imediatamente o segundo relé é acionado, ligando assim o freio de corrente contínua por tempo determinado, gerando uma parada do motor.
