@@ -52,6 +52,8 @@ A imagem \ref{fig:rpc} apresenta um exemplo de implantação de arquitetura \tex
 
 Como é possível observar na figura \ref{fig:rpc}, as rotas da API sempre diferem da previamente estabelecida, adicionando-se sempre uma palavra que remete ao propósito daquela rota.
 
+O código da API desenvolvida se encontra no seguinte link: \url{https://github.com/RecyclingMachine/backend}
+
 \section{Banco de dados}
 
 Como é descrito no documento de arquitetura em anexo, o banco de dados escolhido é o \textit{RethinkDB}. Tendo em vista que a gerência de banco de dados é feita pela API, sua modelagem fica responsável também pela API. A API por sua vez gerencia o banco de dados através da camada da Model. A imagem \ref{fig:model} representa um exemplo de implementação.
@@ -78,7 +80,9 @@ Para que seja feita a integração com a API, devem ser realizadas requisições
 
 \section{Funcionalidades}
 
-Este tópico tem a finalidade de descrever as funcionalidades do aplicativo apontadas no diagrama de caso de uso.
+Este tópico tem a finalidade de descrever as funcionalidades do aplicativo apontadas no diagrama de caso de uso. Ao decorrer do desenvolvimento houve a adição do caso de uso de visualização de estatísticas.
+
+O código do APP desenvolvido se encontra no seguinte link: \url{https://github.com/RecyclingMachine/app}
 
 \subsection{Login}
 
@@ -135,6 +139,19 @@ A imagem \ref{fig:operation} representa o resultado final da implementação des
 		\includegraphics[scale=0.2]{figuras/software/pontuacao.png}
 	\caption{Telas de visualização das operações}
 	\label{fig:operation}
+\end{figure}
+
+\subsection{Visualização de estatísticas de operações}
+
+Essa funcionalidade envolve visualização das estatísticas de operações de inserção de dados na máquina.
+
+A imagem \ref{fig:stat} representa o resultado final da implementação dessa funcionalidade.
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.2]{figuras/software/estatisticas.png}
+	\caption{Telas de visualização de estatísticas de operações}
+	\label{fig:stat}
 \end{figure}
 
 \section{Testes}
